@@ -30,7 +30,7 @@ const pricingTiers = [
       "Basic tracking setup",
       "30-min intro + handover call"
     ],
-    cta: "Get Started",
+    cta: "Choose",
     popular: false
   },
   {
@@ -45,7 +45,7 @@ const pricingTiers = [
       "2 hours handover training",
       "Content migration support"
     ],
-    cta: "Choose Starter",
+    cta: "Choose",
     popular: true
   },
   {
@@ -61,7 +61,7 @@ const pricingTiers = [
       "Contact forms & integrations",
       "30 days bugfix support"
     ],
-    cta: "Choose Standard",
+    cta: "Choose",
     popular: false
   },
 ];
