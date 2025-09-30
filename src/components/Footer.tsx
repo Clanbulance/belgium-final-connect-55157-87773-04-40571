@@ -17,8 +17,8 @@ export const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <Building2 style={{ width: '2rem', height: '2rem' }} className="text-secondary" />
               <div>
-                <h3 className="font-bold text-lg">Otterino Belgium</h3>
-                <p className="text-sm footer-subtitle">Official Belgian Partner</p>
+                <h3 className="font-bold text-lg">RJDP Consulting</h3>
+                <p className="text-sm footer-subtitle">Official Belgian Otterino partner</p>
               </div>
             </div>
             <p className="text-sm footer-text mb-4">
@@ -73,7 +73,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>© 2025 Otterino Belgium. All rights reserved.</p>
+            <p>© 2025 RJDP Consulting. All rights reserved.</p>
             <div className="footer-links-group">
               <a href="#" className="footer-link">Privacy Policy</a>
               <a href="#" className="footer-link">Terms of Service</a>
