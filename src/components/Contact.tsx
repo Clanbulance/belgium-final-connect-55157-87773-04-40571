@@ -5,8 +5,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { toast } from "sonner";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,16 +45,17 @@ export const Contact = () => {
       [e.target.name]: e.target.value
     });
   };
+
   return (
     <section id="contact" className="py-24" style={{ backgroundColor: 'hsl(180 20% 96% / 0.3)' }}>
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="section-title">
-              Let's Build Together
+              {t('contact.title')}
             </h2>
             <p className="section-subtitle">
-              Ready to transform your digital presence? Get in touch for a free consultation.
+              {t('contact.subtitle')}
             </p>
           </div>
 
@@ -62,40 +65,40 @@ export const Contact = () => {
               <CardContent className="pt-6">
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Name *</label>
+                    <label className="block text-sm font-medium mb-2">{t('contact.form.name')} *</label>
                     <Input 
                       name="name"
-                      placeholder="Your name" 
+                      placeholder={t('contact.form.placeholder.name')}
                       value={formData.name}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Email *</label>
+                    <label className="block text-sm font-medium mb-2">{t('contact.form.email')} *</label>
                     <Input 
                       name="email"
                       type="email" 
-                      placeholder="your@email.com"
+                      placeholder={t('contact.form.placeholder.email')}
                       value={formData.email}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Company (Optional)</label>
+                    <label className="block text-sm font-medium mb-2">{t('contact.form.company')}</label>
                     <Input 
                       name="company"
-                      placeholder="Your company name"
+                      placeholder={t('contact.form.placeholder.company')}
                       value={formData.company}
                       onChange={handleChange}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Message *</label>
+                    <label className="block text-sm font-medium mb-2">{t('contact.form.message')} *</label>
                     <Textarea 
                       name="message"
-                      placeholder="Tell us about your project..."
+                      placeholder={t('contact.form.placeholder.message')}
                       className="min-h-32"
                       value={formData.message}
                       onChange={handleChange}
@@ -103,7 +106,7 @@ export const Contact = () => {
                     />
                   </div>
                   <Button variant="hero" className="w-full" size="lg" type="submit">
-                    Send Message
+                    {t('contact.form.cta')}
                   </Button>
                 </form>
               </CardContent>
@@ -118,10 +121,10 @@ export const Contact = () => {
                       <Mail className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-1">Email</h3>
+                      <h3 className="font-bold text-lg mb-1">{t('contact.email.title')}</h3>
                       <p className="text-muted-foreground">info@otterino.be</p>
                       <p className="text-sm text-muted-foreground mt-2">
-                        Response within 24 hours
+                        {t('contact.email.response')}
                       </p>
                     </div>
                   </div>
@@ -135,10 +138,10 @@ export const Contact = () => {
                       <MapPin className="w-6 h-6 text-accent" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-1">Location</h3>
-                      <p className="text-muted-foreground">Brussels, Belgium</p>
+                      <h3 className="font-bold text-lg mb-1">{t('contact.location.title')}</h3>
+                      <p className="text-muted-foreground">{t('contact.location.city')}</p>
                       <p className="text-sm text-muted-foreground mt-2">
-                        Serving all Belgian regions
+                        {t('contact.location.serving')}
                       </p>
                     </div>
                   </div>
@@ -152,8 +155,8 @@ export const Contact = () => {
                       <Phone className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-1">Free Consultation</h3>
-                      <p className="text-muted-foreground">Schedule a 30-minute call</p>
+                      <h3 className="font-bold text-lg mb-1">{t('contact.consult.title')}</h3>
+                      <p className="text-muted-foreground">{t('contact.consult.schedule')}</p>
                       <Button 
                         variant="link" 
                         className="px-0 mt-2"
@@ -161,7 +164,7 @@ export const Contact = () => {
                           description: "Calendar booking feature coming soon!"
                         })}
                       >
-                        Book Now →
+                        {t('contact.consult.cta')}
                       </Button>
                     </div>
                   </div>
@@ -170,11 +173,11 @@ export const Contact = () => {
 
               <Card className="contact-highlight-card">
                 <CardContent className="pt-6">
-                  <h3 className="font-bold text-lg mb-2">Office Hours</h3>
+                  <h3 className="font-bold text-lg mb-2">{t('contact.hours.title')}</h3>
                   <p className="text-sm text-muted-foreground">
-                    Monday - Friday: 9:00 - 18:00<br />
-                    Saturday: By appointment<br />
-                    Sunday: Closed
+                    {t('contact.hours.weekday')}<br />
+                    {t('contact.hours.saturday')}<br />
+                    {t('contact.hours.sunday')}
                   </p>
                 </CardContent>
               </Card>

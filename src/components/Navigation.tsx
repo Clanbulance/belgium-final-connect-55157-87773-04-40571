@@ -1,4 +1,6 @@
-import { Building2 } from "lucide-react";
+import { Building2, Languages } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -8,6 +10,8 @@ const scrollToSection = (id: string) => {
 };
 
 export const Navigation = () => {
+  const { language, setLanguage, t } = useLanguage();
+
   return (
     <nav className="nav-bar">
       <div className="container mx-auto px-4">
@@ -19,27 +23,36 @@ export const Navigation = () => {
             <Building2 className="logo-icon" />
             <div>
               <h2 className="logo-title">RJDP Consulting</h2>
-              <p className="logo-subtitle">Official Belgian Otterino partner</p>
+              <p className="logo-subtitle">{t('nav.subtitle')}</p>
             </div>
           </button>
           
           <div className="nav-links hidden-md flex-md items-center gap-6">
             <button onClick={() => scrollToSection('services')} className="nav-link">
-              Services
+              {t('nav.services')}
             </button>
             <button onClick={() => scrollToSection('pricing')} className="nav-link">
-              Pricing
+              {t('nav.pricing')}
             </button>
             <button onClick={() => scrollToSection('partnership')} className="nav-link">
-              Partnership
+              {t('nav.partnership')}
             </button>
             <button onClick={() => scrollToSection('contact')} className="nav-link">
-              Contact
+              {t('nav.contact')}
             </button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
+              className="flex items-center gap-2"
+            >
+              <Languages className="w-4 h-4" />
+              {language === 'nl' ? 'EN' : 'NL'}
+            </Button>
           </div>
 
           <button className="button-nav-cta" onClick={() => scrollToSection('contact')}>
-            Get Started
+            {t('nav.cta')}
           </button>
         </div>
       </div>

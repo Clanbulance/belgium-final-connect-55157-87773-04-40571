@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Building2, Handshake, Award, Globe2 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const scrollToContact = () => {
   const element = document.getElementById('contact');
@@ -10,22 +11,22 @@ const scrollToContact = () => {
 };
 
 export const Partnership = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="partnership" className="py-24 partnership-bg">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <div className="partnership-badge">
             <Handshake style={{ width: '1.25rem', height: '1.25rem' }} className="text-secondary" />
-            <span className="text-secondary font-semibold">Official Partnership</span>
+            <span className="text-secondary font-semibold">{t('partnership.badge')}</span>
           </div>
           
           <h2 className="section-title">
-            Belgian Partner of Otterino
+            {t('partnership.title')}
           </h2>
           <p className="section-subtitle leading-relaxed">
-            As the official Belgian counterpart to Otterino, we bring Swiss-engineered excellence 
-            to Belgian businesses. We offer the exact same premium services with local expertise 
-            and multilingual support tailored for the Belgian market.
+            {t('partnership.subtitle')}
           </p>
         </div>
 
@@ -35,9 +36,9 @@ export const Partnership = () => {
               <div className="icon-container-large bg-primary-10">
                 <Building2 style={{ width: '2rem', height: '2rem' }} className="text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Local Expertise</h3>
+              <h3 className="text-xl font-bold mb-2">{t('partnership.card1.title')}</h3>
               <p className="text-muted-foreground">
-                Deep understanding of Belgian business culture, regulations, and market needs.
+                {t('partnership.card1.desc')}
               </p>
             </CardContent>
           </Card>
@@ -47,9 +48,9 @@ export const Partnership = () => {
               <div className="icon-container-large bg-accent-10">
                 <Award style={{ width: '2rem', height: '2rem' }} className="text-accent" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Swiss Quality</h3>
+              <h3 className="text-xl font-bold mb-2">{t('partnership.card2.title')}</h3>
               <p className="text-muted-foreground">
-                Same proven processes, technology, and quality standards as Otterino worldwide.
+                {t('partnership.card2.desc')}
               </p>
             </CardContent>
           </Card>
@@ -59,9 +60,9 @@ export const Partnership = () => {
               <div className="icon-container-large bg-secondary-10">
                 <Globe2 style={{ width: '2rem', height: '2rem' }} className="text-secondary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Tri-Continental Network</h3>
+              <h3 className="text-xl font-bold mb-2">{t('partnership.card3.title')}</h3>
               <p className="text-muted-foreground">
-                Access to Otterino's global network across Europe, UK, and Asia-Pacific.
+                {t('partnership.card3.desc')}
               </p>
             </CardContent>
           </Card>
@@ -70,27 +71,27 @@ export const Partnership = () => {
         <div className="max-w-3xl mx-auto">
           <Card className="partnership-highlight-card">
             <CardContent className="pt-8">
-              <h3 className="text-2xl font-bold mb-4 text-center">Why Choose Our Partnership?</h3>
+              <h3 className="text-2xl font-bold mb-4 text-center">{t('partnership.why.title')}</h3>
               <ul className="space-y-3 mb-8">
                 <li className="partnership-benefit">
                   <span className="benefit-check">✓</span>
-                  <span><strong>Identical Services:</strong> Same premium web solutions, automation, and SEO expertise</span>
+                  <span><strong>{t('partnership.why.1')}</strong> {t('partnership.why.1.desc')}</span>
                 </li>
                 <li className="partnership-benefit">
                   <span className="benefit-check">✓</span>
-                  <span><strong>Belgian Focus:</strong> Tri-lingual support (NL/FR/EN) and local market understanding</span>
+                  <span><strong>{t('partnership.why.2')}</strong> {t('partnership.why.2.desc')}</span>
                 </li>
                 <li className="partnership-benefit">
                   <span className="benefit-check">✓</span>
-                  <span><strong>EU Compliance:</strong> Belgian and Swiss data centers, GDPR-first approach</span>
+                  <span><strong>{t('partnership.why.3')}</strong> {t('partnership.why.3.desc')}</span>
                 </li>
                 <li className="partnership-benefit">
                   <span className="benefit-check">✓</span>
-                  <span><strong>Global Standards:</strong> Access to Otterino's proven methodologies and international expertise</span>
+                  <span><strong>{t('partnership.why.4')}</strong> {t('partnership.why.4.desc')}</span>
                 </li>
                 <li className="partnership-benefit">
                   <span className="benefit-check">✓</span>
-                  <span><strong>Zero Lock-in:</strong> Complete ownership and portability of your digital assets</span>
+                  <span><strong>{t('partnership.why.5')}</strong> {t('partnership.why.5.desc')}</span>
                 </li>
               </ul>
               
@@ -101,7 +102,7 @@ export const Partnership = () => {
                   className="text-lg"
                   onClick={scrollToContact}
                 >
-                  Explore Partnership Benefits
+                  {t('partnership.cta')}
                 </Button>
               </div>
             </CardContent>
@@ -110,7 +111,7 @@ export const Partnership = () => {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground">
-            Learn more about Otterino:{" "}
+            {t('partnership.learn')}{" "}
             <a 
               href="https://otterino.com"
               target="_blank" 

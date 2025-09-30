@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { toast } from "sonner";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const scrollToContact = () => {
   const element = document.getElementById('contact');
@@ -17,65 +18,67 @@ const handlePricingClick = (tierName: string) => {
   scrollToContact();
 };
 
-const pricingTiers = [
-  {
-    name: "Hero Landing",
-    price: "€399",
-    delivery: "2-5 days",
-    description: "Perfect for campaigns and quick launches",
-    features: [
-      "Single landing page",
-      "Mobile-optimized design",
-      "Contact form integration",
-      "Basic tracking setup",
-      "30-min intro + handover call"
-    ],
-    cta: "Choose",
-    popular: false
-  },
-  {
-    name: "Starter",
-    price: "€1,990",
-    delivery: "1-2 weeks",
-    description: "Ideal for small businesses getting online",
-    features: [
-      "3 pages (Home, About, Contact)",
-      "Basic mobile layout",
-      "Basic SEO optimization",
-      "2 hours handover training",
-      "Content migration support"
-    ],
-    cta: "Choose",
-    popular: true
-  },
-  {
-    name: "Standard",
-    price: "€4,900",
-    delivery: "2-4 weeks",
-    description: "Most popular for growing businesses",
-    features: [
-      "Up to 6 pages",
-      "PWA basics included",
-      "Core Web Vitals tuning",
-      "Basic SEO/GEO optimization",
-      "Contact forms & integrations",
-      "30 days bugfix support"
-    ],
-    cta: "Choose",
-    popular: false
-  },
-];
-
 export const Pricing = () => {
+  const { t } = useLanguage();
+
+  const pricingTiers = [
+    {
+      name: t('pricing.tier1.name'),
+      price: "€399",
+      delivery: "2-5 " + (t('pricing.delivery').toLowerCase().includes('oplevering') ? 'dagen' : 'days'),
+      description: t('pricing.tier1.desc'),
+      features: [
+        t('pricing.tier1.f1'),
+        t('pricing.tier1.f2'),
+        t('pricing.tier1.f3'),
+        t('pricing.tier1.f4'),
+        t('pricing.tier1.f5')
+      ],
+      cta: t('pricing.cta'),
+      popular: false
+    },
+    {
+      name: t('pricing.tier2.name'),
+      price: "€1,990",
+      delivery: "1-2 " + (t('pricing.delivery').toLowerCase().includes('oplevering') ? 'weken' : 'weeks'),
+      description: t('pricing.tier2.desc'),
+      features: [
+        t('pricing.tier2.f1'),
+        t('pricing.tier2.f2'),
+        t('pricing.tier2.f3'),
+        t('pricing.tier2.f4'),
+        t('pricing.tier2.f5')
+      ],
+      cta: t('pricing.cta'),
+      popular: true
+    },
+    {
+      name: t('pricing.tier3.name'),
+      price: "€4,900",
+      delivery: "2-4 " + (t('pricing.delivery').toLowerCase().includes('oplevering') ? 'weken' : 'weeks'),
+      description: t('pricing.tier3.desc'),
+      features: [
+        t('pricing.tier3.f1'),
+        t('pricing.tier3.f2'),
+        t('pricing.tier3.f3'),
+        t('pricing.tier3.f4'),
+        t('pricing.tier3.f5'),
+        t('pricing.tier3.f6')
+      ],
+      cta: t('pricing.cta'),
+      popular: false
+    },
+  ];
+
   return (
     <section id="pricing" className="py-24" style={{ backgroundColor: 'var(--background)' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
           <h2 className="section-title">
-            Transparent Pricing
+            {t('pricing.title')}
           </h2>
           <p className="section-subtitle">
-            No hidden fees. No vendor lock-in. Choose the package that fits your needs.
+            {t('pricing.subtitle')}
           </p>
         </div>
 
@@ -88,7 +91,7 @@ export const Pricing = () => {
               {tier.popular && (
                 <div className="pricing-badge-container">
                   <span className="popular-badge">
-                    Most Popular
+                    {t('pricing.popular')}
                   </span>
                 </div>
               )}
@@ -99,7 +102,7 @@ export const Pricing = () => {
                   <span className="text-4xl font-bold text-primary">{tier.price}</span>
                 </div>
                 <div className="text-sm text-muted-foreground mb-4">
-                  Delivery: {tier.delivery}
+                  {t('pricing.delivery')}: {tier.delivery}
                 </div>
                 <CardDescription className="text-base">{tier.description}</CardDescription>
               </CardHeader>
@@ -130,18 +133,18 @@ export const Pricing = () => {
         <div className="mt-20 text-center">
           <Card className="pricing-seo-card">
             <CardHeader>
-              <CardTitle className="text-2xl">SEO / Geo Fix (Quick)</CardTitle>
+              <CardTitle className="text-2xl">{t('pricing.seo.title')}</CardTitle>
               <div className="text-3xl font-bold text-primary">€990</div>
-              <CardDescription>3-7 days delivery</CardDescription>
+              <CardDescription>{t('pricing.seo.delivery')}</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="mb-4">Technical SEO quick fixes, Google My Business review, NAP consistency, and prioritized action list.</p>
+              <p className="mb-4">{t('pricing.seo.desc')}</p>
               <Button 
                 variant="secondary" 
                 size="lg"
                 onClick={() => handlePricingClick('SEO / Geo Fix')}
               >
-                Request SEO Fix
+                {t('pricing.seo.cta')}
               </Button>
             </CardContent>
           </Card>
