@@ -25,16 +25,16 @@ export const Navigation = () => {
           </button>
           
           <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-colors">
+            <button onClick={() => scrollToSection('services')} className="nav-link">
               Services
             </button>
-            <button onClick={() => scrollToSection('pricing')} className="text-foreground hover:text-primary transition-colors">
+            <button onClick={() => scrollToSection('pricing')} className="nav-link">
               Pricing
             </button>
-            <button onClick={() => scrollToSection('partnership')} className="text-foreground hover:text-primary transition-colors">
+            <button onClick={() => scrollToSection('partnership')} className="nav-link">
               Partnership
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-primary transition-colors">
+            <button onClick={() => scrollToSection('contact')} className="nav-link">
               Contact
             </button>
           </div>

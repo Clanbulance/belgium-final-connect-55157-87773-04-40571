@@ -48,10 +48,10 @@ export const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            <h2 className="section-title">
               Let's Build Together
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="section-subtitle">
               Ready to transform your digital presence? Get in touch for a free consultation.
             </p>
           </div>
@@ -111,7 +111,7 @@ export const Contact = () => {
 
             {/* Contact Information */}
             <div className="space-y-6">
-              <Card className="border-2 hover:border-primary/50 transition-all">
+              <Card className="contact-info-card">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -128,7 +128,7 @@ export const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 hover:border-primary/50 transition-all">
+              <Card className="contact-info-card">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
@@ -145,7 +145,7 @@ export const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 hover:border-primary/50 transition-all">
+              <Card className="contact-info-card">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">

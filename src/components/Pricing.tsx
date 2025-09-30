@@ -87,10 +87,10 @@ export const Pricing = () => {
     <section id="pricing" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+          <h2 className="section-title">
             Transparent Pricing
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="section-subtitle">
             No hidden fees. No vendor lock-in. Choose the package that fits your needs.
           </p>
           <p className="text-sm text-muted-foreground mt-4">
@@ -106,7 +106,7 @@ export const Pricing = () => {
             >
               {tier.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-secondary to-accent text-secondary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                  <span className="popular-badge">
                     Most Popular
                   </span>
                 </div>

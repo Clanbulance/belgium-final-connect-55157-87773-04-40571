@@ -42,10 +42,10 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-background/80">
-              <li><button onClick={() => scrollToSection('services')} className="hover:text-secondary transition-colors">Web Development</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="hover:text-secondary transition-colors">Marketing Automation</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="hover:text-secondary transition-colors">SEO & Visibility</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="hover:text-secondary transition-colors">Business Automation</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="footer-link">Web Development</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="footer-link">Marketing Automation</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="footer-link">SEO & Visibility</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="footer-link">Business Automation</button></li>
             </ul>
           </div>
 
@@ -53,15 +53,15 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-background/80">
-              <li><button onClick={() => scrollToSection('partnership')} className="hover:text-secondary transition-colors">Partnership</button></li>
-              <li><button onClick={() => scrollToSection('pricing')} className="hover:text-secondary transition-colors">Pricing</button></li>
-              <li><button onClick={() => scrollToSection('contact')} className="hover:text-secondary transition-colors">Contact</button></li>
+              <li><button onClick={() => scrollToSection('partnership')} className="footer-link">Partnership</button></li>
+              <li><button onClick={() => scrollToSection('pricing')} className="footer-link">Pricing</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="footer-link">Contact</button></li>
               <li>
                 <a 
                   href="https://otterino.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors"
+                  className="footer-link"
                 >
                   Otterino Global
                 </a>
@@ -75,9 +75,9 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/60">
             <p>© 2025 Otterino Belgium. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-secondary transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-secondary transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-secondary transition-colors">GDPR</a>
+              <a href="#" className="footer-link">Privacy Policy</a>
+              <a href="#" className="footer-link">Terms of Service</a>
+              <a href="#" className="footer-link">GDPR</a>
             </div>
           </div>
         </div>

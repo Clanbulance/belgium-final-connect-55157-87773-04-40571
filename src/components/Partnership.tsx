@@ -14,15 +14,15 @@ export const Partnership = () => {
     <section id="partnership" className="py-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-secondary/20 border border-secondary/30 rounded-full px-6 py-2 mb-6">
+          <div className="partnership-badge">
             <Handshake className="w-5 h-5 text-secondary" />
             <span className="text-secondary font-semibold">Official Partnership</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          <h2 className="section-title">
             Belgian Partner of Otterino
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="section-subtitle leading-relaxed">
             As the official Belgian counterpart to Otterino, we bring Swiss-engineered excellence 
             to Belgian businesses. We offer the exact same premium services with local expertise 
             and multilingual support tailored for the Belgian market.
@@ -32,7 +32,7 @@ export const Partnership = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <Card className="border-2 hover:border-primary/50 transition-all">
             <CardContent className="pt-6 text-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <div className="icon-container-large bg-primary/10">
                 <Building2 className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Local Expertise</h3>
@@ -44,7 +44,7 @@ export const Partnership = () => {
 
           <Card className="border-2 hover:border-primary/50 transition-all">
             <CardContent className="pt-6 text-center">
-              <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+              <div className="icon-container-large bg-accent/10">
                 <Award className="w-8 h-8 text-accent" />
               </div>
               <h3 className="text-xl font-bold mb-2">Swiss Quality</h3>
@@ -56,7 +56,7 @@ export const Partnership = () => {
 
           <Card className="border-2 hover:border-primary/50 transition-all">
             <CardContent className="pt-6 text-center">
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+              <div className="icon-container-large bg-secondary/10">
                 <Globe2 className="w-8 h-8 text-secondary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Tri-Continental Network</h3>

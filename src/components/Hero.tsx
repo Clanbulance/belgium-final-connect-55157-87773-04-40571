@@ -24,46 +24,46 @@ export const Hero = () => {
       <div className="container mx-auto px-4 relative z-10 pt-24 pb-16">
         <div className="max-w-4xl mx-auto text-center">
           {/* Partnership Badge */}
-          <div className="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm border border-secondary/30 rounded-full px-6 py-2 mb-8">
+          <div className="hero-badge">
             <span className="text-secondary font-semibold">★★★★★</span>
             <span className="text-primary-foreground">Official Belgian Partner of Otterino</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary-foreground">
+          <h1 className="hero-title">
             Premium Web Solutions for
             <span className="block bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
               Belgian Businesses
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="hero-subtitle">
             Swiss-engineered quality meets Belgian expertise. We deliver fast, secure, and automated websites that drive growth.
           </p>
 
           {/* Value Props */}
           <div className="grid md:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto">
-            <div className="flex items-start gap-3 text-left bg-card/10 backdrop-blur-sm rounded-lg p-4 border border-primary/20">
+            <div className="value-prop-card">
               <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-primary-foreground mb-1">No Vendor Lock-in</h3>
                 <p className="text-sm text-primary-foreground/80">Complete ownership of your code and data</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 text-left bg-card/10 backdrop-blur-sm rounded-lg p-4 border border-primary/20">
+            <div className="value-prop-card">
               <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-primary-foreground mb-1">Tri-Lingual Support</h3>
                 <p className="text-sm text-primary-foreground/80">Dutch, French, and English ready</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 text-left bg-card/10 backdrop-blur-sm rounded-lg p-4 border border-primary/20">
+            <div className="value-prop-card">
               <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-primary-foreground mb-1">EU Compliant Hosting</h3>
                 <p className="text-sm text-primary-foreground/80">Belgian & Swiss data centers</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 text-left bg-card/10 backdrop-blur-sm rounded-lg p-4 border border-primary/20">
+            <div className="value-prop-card">
               <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-primary-foreground mb-1">Smart Automation</h3>
