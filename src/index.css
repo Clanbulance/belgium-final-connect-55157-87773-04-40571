@@ -366,8 +366,8 @@ button {
   font-size: 1rem;
   padding: 0.625rem 1rem;
   border-radius: 0.5rem;
-  background: none;
-  border: none;
+  background: hsl(var(--primary) / 0.05);
+  border: 2px solid hsl(var(--primary) / 0.15);
   cursor: pointer;
   position: relative;
 }
@@ -387,7 +387,9 @@ button {
 
 .nav-link:hover {
   color: var(--primary);
-  background-color: hsl(var(--primary) / 0.12);
+  background-color: hsl(var(--primary) / 0.15);
+  border-color: hsl(var(--primary) / 0.4);
+  transform: translateY(-1px);
 }
 
 .nav-link:hover::after {
