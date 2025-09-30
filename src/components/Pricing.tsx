@@ -86,7 +86,7 @@ export const Pricing = () => {
   return (
     <section id="pricing" className="py-24" style={{ backgroundColor: 'var(--background)' }}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="section-title">
             Transparent Pricing
           </h2>
@@ -112,9 +112,9 @@ export const Pricing = () => {
                 </div>
               )}
               
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
-                <div className="mb-2">
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-2xl mb-4">{tier.name}</CardTitle>
+                <div className="mb-3">
                   <span className="text-4xl font-bold text-primary">{tier.price}</span>
                 </div>
                 <div className="text-sm text-muted-foreground mb-4">
@@ -124,7 +124,7 @@ export const Pricing = () => {
               </CardHeader>
               
               <CardContent>
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-3 mb-8">
                   {tier.features.map((feature) => (
                     <li key={feature} className="pricing-feature">
                       <Check style={{ width: '1.25rem', height: '1.25rem', flexShrink: 0, marginTop: '0.125rem' }} className="text-accent" />
@@ -146,7 +146,7 @@ export const Pricing = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-20 text-center">
           <Card className="pricing-seo-card">
             <CardHeader>
               <CardTitle className="text-2xl">SEO / Geo Fix (Quick)</CardTitle>
