@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Building2 } from "lucide-react";
 
 const scrollToSection = (id: string) => {
@@ -39,9 +38,9 @@ export const Navigation = () => {
             </button>
           </div>
 
-          <Button variant="hero" size="sm" onClick={() => scrollToSection('contact')} className="nav-button">
+          <button className="button-nav-cta" onClick={() => scrollToSection('contact')}>
             Get Started
-          </Button>
+          </button>
         </div>
       </div>
     </nav>
