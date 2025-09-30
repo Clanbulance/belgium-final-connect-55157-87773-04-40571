@@ -64,22 +64,6 @@ const pricingTiers = [
     cta: "Choose Standard",
     popular: true
   },
-  {
-    name: "Pro",
-    price: "€9,900+",
-    delivery: "4+ weeks",
-    description: "Enterprise-grade solutions",
-    features: [
-      "Custom integrations (ERP/CRM)",
-      "Advanced SEO/AEO",
-      "Enterprise hosting options",
-      "Service Level Agreement",
-      "Extended training program",
-      "Priority support"
-    ],
-    cta: "Contact Sales",
-    popular: false
-  }
 ];
 
 export const Pricing = () => {
@@ -93,12 +77,9 @@ export const Pricing = () => {
           <p className="section-subtitle">
             No hidden fees. No vendor lock-in. Choose the package that fits your needs.
           </p>
-          <p className="text-sm text-muted-foreground mt-4">
-            All prices exclude VAT • Custom hourly rate: €130-180/hour • Retainers from €100/month
-          </p>
         </div>
 
-        <div className="grid grid-md-2 grid-lg-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-md-2 grid-lg-3 gap-8 max-w-6xl mx-auto">
           {pricingTiers.map((tier) => (
             <Card 
               key={tier.name} 
