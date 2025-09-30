@@ -39,7 +39,7 @@ export const Navigation = () => {
             </button>
           </div>
 
-          <Button variant="hero" size="sm" onClick={() => scrollToSection('contact')}>
+          <Button variant="hero" size="sm" onClick={() => scrollToSection('contact')} className="!shadow-none hover:!shadow-none !transition-none">
             Get Started
           </Button>
         </div>
