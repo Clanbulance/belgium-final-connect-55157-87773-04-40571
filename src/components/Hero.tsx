@@ -10,7 +10,7 @@ const scrollToSection = (id: string) => {
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20">
       {/* Background Image */}
       <div 
         className="hero-background"
@@ -20,7 +20,7 @@ export const Hero = () => {
       />
       
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 pt-24 pb-32">
+      <div className="container mx-auto px-4 relative z-10 py-16">
         <div className="max-w-4xl mx-auto text-center">
           {/* Partnership Badge */}
           <div className="hero-badge">
