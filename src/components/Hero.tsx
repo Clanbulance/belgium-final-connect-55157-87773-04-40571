@@ -83,7 +83,7 @@ export const Hero = () => {
               onClick={() => scrollToSection('contact')}
             >
               Schedule Free Consultation
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2" />
             </Button>
             <Button 
               variant="outline" 
