@@ -23,7 +23,7 @@ export const Navigation = () => {
             </div>
           </button>
           
-          <div className="nav-links hidden-md flex-md items-center gap-8">
+          <div className="nav-links hidden-md flex-md items-center gap-6">
             <button onClick={() => scrollToSection('services')} className="nav-link">
               Services
             </button>
