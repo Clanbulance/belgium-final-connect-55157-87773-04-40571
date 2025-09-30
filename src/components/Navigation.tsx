@@ -18,8 +18,8 @@ export const Navigation = () => {
           >
             <Building2 className="logo-icon" />
             <div>
-              <h2 className="logo-title">Otterino Belgium</h2>
-              <p className="logo-subtitle">Official Belgian Partner</p>
+              <h2 className="logo-title">RJDP Consulting</h2>
+              <p className="logo-subtitle">Official Belgian Otterino partner</p>
             </div>
           </button>
           
