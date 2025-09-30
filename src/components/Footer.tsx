@@ -1,5 +1,12 @@
 import { Building2 } from "lucide-react";
 
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 export const Footer = () => {
   return (
     <footer className="bg-foreground text-background py-12">
@@ -35,10 +42,10 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-background/80">
-              <li><a href="#services" className="hover:text-secondary transition-colors">Web Development</a></li>
-              <li><a href="#services" className="hover:text-secondary transition-colors">Marketing Automation</a></li>
-              <li><a href="#services" className="hover:text-secondary transition-colors">SEO & Visibility</a></li>
-              <li><a href="#services" className="hover:text-secondary transition-colors">Business Automation</a></li>
+              <li><button onClick={() => scrollToSection('services')} className="hover:text-secondary transition-colors">Web Development</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="hover:text-secondary transition-colors">Marketing Automation</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="hover:text-secondary transition-colors">SEO & Visibility</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="hover:text-secondary transition-colors">Business Automation</button></li>
             </ul>
           </div>
 
@@ -46,9 +53,9 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-background/80">
-              <li><a href="#partnership" className="hover:text-secondary transition-colors">Partnership</a></li>
-              <li><a href="#pricing" className="hover:text-secondary transition-colors">Pricing</a></li>
-              <li><a href="#contact" className="hover:text-secondary transition-colors">Contact</a></li>
+              <li><button onClick={() => scrollToSection('partnership')} className="hover:text-secondary transition-colors">Partnership</button></li>
+              <li><button onClick={() => scrollToSection('pricing')} className="hover:text-secondary transition-colors">Pricing</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="hover:text-secondary transition-colors">Contact</button></li>
               <li>
                 <a 
                   href="https://otterino.com" 

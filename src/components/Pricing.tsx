@@ -1,6 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { toast } from "sonner";
+
+const scrollToContact = () => {
+  const element = document.getElementById('contact');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
+const handlePricingClick = (tierName: string) => {
+  toast.success(`Great choice! Let's discuss the ${tierName} package.`, {
+    description: "Scroll down to fill out the contact form."
+  });
+  scrollToContact();
+};
 
 const pricingTiers = [
   {
@@ -122,6 +137,7 @@ export const Pricing = () => {
                   variant={tier.popular ? "hero" : "outline"} 
                   className="w-full"
                   size="lg"
+                  onClick={() => handlePricingClick(tier.name)}
                 >
                   {tier.cta}
                 </Button>
@@ -139,7 +155,13 @@ export const Pricing = () => {
             </CardHeader>
             <CardContent>
               <p className="mb-4">Technical SEO quick fixes, Google My Business review, NAP consistency, and prioritized action list.</p>
-              <Button variant="secondary" size="lg">Request SEO Fix</Button>
+              <Button 
+                variant="secondary" 
+                size="lg"
+                onClick={() => handlePricingClick('SEO / Geo Fix')}
+              >
+                Request SEO Fix
+              </Button>
             </CardContent>
           </Card>
         </div>

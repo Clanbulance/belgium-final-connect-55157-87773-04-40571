@@ -2,6 +2,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Building2, Handshake, Award, Globe2 } from "lucide-react";
 
+const scrollToContact = () => {
+  const element = document.getElementById('contact');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 export const Partnership = () => {
   return (
     <section id="partnership" className="py-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -88,7 +95,12 @@ export const Partnership = () => {
               </ul>
               
               <div className="text-center">
-                <Button variant="hero" size="lg" className="text-lg">
+                <Button 
+                  variant="hero" 
+                  size="lg" 
+                  className="text-lg"
+                  onClick={scrollToContact}
+                >
                   Explore Partnership Benefits
                 </Button>
               </div>
