@@ -10,21 +10,21 @@ const scrollToSection = (id: string) => {
 
 export const Navigation = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="nav-bar">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="nav-content">
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="nav-logo"
           >
-            <Building2 className="w-8 h-8 text-primary" />
+            <Building2 className="logo-icon" />
             <div>
-              <h2 className="font-bold text-lg text-foreground">Otterino Belgium</h2>
-              <p className="text-xs text-muted-foreground">Official Belgian Partner</p>
+              <h2 className="logo-title">Otterino Belgium</h2>
+              <p className="logo-subtitle">Official Belgian Partner</p>
             </div>
           </button>
           
-          <div className="hidden md:flex items-center gap-8">
+          <div className="nav-links hidden-md flex-md items-center gap-8">
             <button onClick={() => scrollToSection('services')} className="nav-link">
               Services
             </button>
@@ -39,7 +39,7 @@ export const Navigation = () => {
             </button>
           </div>
 
-          <Button variant="hero" size="sm" onClick={() => scrollToSection('contact')} className="!shadow-none hover:!shadow-none !transition-none">
+          <Button variant="hero" size="sm" onClick={() => scrollToSection('contact')} className="nav-button">
             Get Started
           </Button>
         </div>

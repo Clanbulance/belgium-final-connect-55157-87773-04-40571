@@ -42,7 +42,7 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="services" className="py-24 bg-muted/30">
+    <section id="services" className="py-24" style={{ backgroundColor: 'hsl(180 20% 96% / 0.3)' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">
@@ -53,18 +53,18 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-md-2 grid-lg-3 gap-8">
           {services.map((service) => (
             <Card key={service.title} className="service-card group">
               <CardHeader>
                 <div className="icon-container-primary">
-                  <service.icon className="w-6 h-6 text-primary-foreground" />
+                  <service.icon className="w-6 h-6 text-primary-foreground" style={{ width: '1.5rem', height: '1.5rem' }} />
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
                 <CardDescription className="text-base">{service.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="pt-4 border-t border-border">
+                <div className="pt-4 border-t" style={{ borderColor: 'var(--border)' }}>
                   <p className="text-sm font-medium text-accent">
                     ✓ {service.outcome}
                   </p>

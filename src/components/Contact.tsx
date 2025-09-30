@@ -44,7 +44,7 @@ export const Contact = () => {
     });
   };
   return (
-    <section id="contact" className="py-24 bg-muted/30">
+    <section id="contact" className="py-24" style={{ backgroundColor: 'hsl(180 20% 96% / 0.3)' }}>
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -56,7 +56,7 @@ export const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-md-2 gap-8">
             {/* Contact Form */}
             <Card>
               <CardContent className="pt-6">
@@ -168,7 +168,7 @@ export const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-primary/30">
+              <Card className="contact-highlight-card">
                 <CardContent className="pt-6">
                   <h3 className="font-bold text-lg mb-2">Office Hours</h3>
                   <p className="text-sm text-muted-foreground">

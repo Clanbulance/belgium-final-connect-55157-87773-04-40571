@@ -14,7 +14,7 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 hero-background"
+        className="hero-background"
         style={{
           '--hero-image': `url(${heroImage})`
         } as React.CSSProperties}
@@ -31,7 +31,7 @@ export const Hero = () => {
 
           <h1 className="hero-title">
             Premium Web Solutions for
-            <span className="block bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+            <span className="hero-title-gradient">
               Belgian Businesses
             </span>
           </h1>
@@ -41,39 +41,39 @@ export const Hero = () => {
           </p>
 
           {/* Value Props */}
-          <div className="grid md:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto">
+          <div className="grid grid-md-2 gap-4 mb-12 max-w-2xl mx-auto">
             <div className="value-prop-card">
-              <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+              <CheckCircle2 style={{ width: '1.5rem', height: '1.5rem', flexShrink: 0, marginTop: '0.25rem' }} className="text-secondary" />
               <div>
                 <h3 className="font-semibold text-primary-foreground mb-1">No Vendor Lock-in</h3>
-                <p className="text-sm text-primary-foreground/80">Complete ownership of your code and data</p>
+                <p className="text-sm" style={{ color: 'hsl(0 0% 100% / 0.8)' }}>Complete ownership of your code and data</p>
               </div>
             </div>
             <div className="value-prop-card">
-              <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+              <CheckCircle2 style={{ width: '1.5rem', height: '1.5rem', flexShrink: 0, marginTop: '0.25rem' }} className="text-secondary" />
               <div>
                 <h3 className="font-semibold text-primary-foreground mb-1">Tri-Lingual Support</h3>
-                <p className="text-sm text-primary-foreground/80">Dutch, French, and English ready</p>
+                <p className="text-sm" style={{ color: 'hsl(0 0% 100% / 0.8)' }}>Dutch, French, and English ready</p>
               </div>
             </div>
             <div className="value-prop-card">
-              <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+              <CheckCircle2 style={{ width: '1.5rem', height: '1.5rem', flexShrink: 0, marginTop: '0.25rem' }} className="text-secondary" />
               <div>
                 <h3 className="font-semibold text-primary-foreground mb-1">EU Compliant Hosting</h3>
-                <p className="text-sm text-primary-foreground/80">Belgian & Swiss data centers</p>
+                <p className="text-sm" style={{ color: 'hsl(0 0% 100% / 0.8)' }}>Belgian & Swiss data centers</p>
               </div>
             </div>
             <div className="value-prop-card">
-              <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+              <CheckCircle2 style={{ width: '1.5rem', height: '1.5rem', flexShrink: 0, marginTop: '0.25rem' }} className="text-secondary" />
               <div>
                 <h3 className="font-semibold text-primary-foreground mb-1">Smart Automation</h3>
-                <p className="text-sm text-primary-foreground/80">Marketing & business process automation</p>
+                <p className="text-sm" style={{ color: 'hsl(0 0% 100% / 0.8)' }}>Marketing & business process automation</p>
               </div>
             </div>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col gap-4 justify-center flex-md-row">
             <Button 
               variant="hero" 
               size="lg" 
@@ -81,12 +81,12 @@ export const Hero = () => {
               onClick={() => scrollToSection('contact')}
             >
               Schedule Free Consultation
-              <ArrowRight className="ml-2" />
+              <ArrowRight style={{ marginLeft: '0.5rem', width: '1.25rem', height: '1.25rem' }} />
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
-              className="text-lg border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground"
+              className="button-outline-hero text-lg"
               onClick={() => scrollToSection('pricing')}
             >
               View Pricing
@@ -94,14 +94,14 @@ export const Hero = () => {
           </div>
 
           {/* Quick Note */}
-          <p className="text-sm text-primary-foreground/70 mt-8">
+          <p className="text-sm mt-8" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
             🚀 Express landing page? First draft in 48 hours. Starting from €399
           </p>
         </div>
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
+      <div className="hero-gradient-overlay" />
     </section>
   );
 };

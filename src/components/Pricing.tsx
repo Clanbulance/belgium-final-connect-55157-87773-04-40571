@@ -84,7 +84,7 @@ const pricingTiers = [
 
 export const Pricing = () => {
   return (
-    <section id="pricing" className="py-24 bg-background">
+    <section id="pricing" className="py-24" style={{ backgroundColor: 'var(--background)' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">
@@ -98,14 +98,14 @@ export const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-md-2 grid-lg-4 gap-8 max-w-7xl mx-auto">
           {pricingTiers.map((tier) => (
             <Card 
               key={tier.name} 
-              className={`relative ${tier.popular ? 'border-primary border-3 shadow-[var(--shadow-elegant)]' : 'border-2'} hover:shadow-lg transition-all duration-300`}
+              className={`pricing-card relative ${tier.popular ? 'pricing-card-popular' : ''}`}
             >
               {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <div className="pricing-badge-container">
                   <span className="popular-badge">
                     Most Popular
                   </span>
@@ -126,15 +126,15 @@ export const Pricing = () => {
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                    <li key={feature} className="pricing-feature">
+                      <Check style={{ width: '1.25rem', height: '1.25rem', flexShrink: 0, marginTop: '0.125rem' }} className="text-accent" />
                       <span className="text-sm text-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 
                 <Button 
-                  variant={tier.popular ? "hero" : "outline"} 
+                  variant={tier.popular ? "hero" : "outline"}
                   className="w-full"
                   size="lg"
                   onClick={() => handlePricingClick(tier.name)}
@@ -147,7 +147,7 @@ export const Pricing = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <Card className="max-w-3xl mx-auto border-secondary/30 bg-secondary/5">
+          <Card className="pricing-seo-card">
             <CardHeader>
               <CardTitle className="text-2xl">SEO / Geo Fix (Quick)</CardTitle>
               <div className="text-3xl font-bold text-primary">€990</div>

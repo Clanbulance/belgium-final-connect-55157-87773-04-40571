@@ -11,11 +11,11 @@ const scrollToContact = () => {
 
 export const Partnership = () => {
   return (
-    <section id="partnership" className="py-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+    <section id="partnership" className="py-24 partnership-bg">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <div className="partnership-badge">
-            <Handshake className="w-5 h-5 text-secondary" />
+            <Handshake style={{ width: '1.25rem', height: '1.25rem' }} className="text-secondary" />
             <span className="text-secondary font-semibold">Official Partnership</span>
           </div>
           
@@ -29,11 +29,11 @@ export const Partnership = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <Card className="border-2 hover:border-primary/50 transition-all">
+        <div className="grid grid-md-3 gap-8 mb-16">
+          <Card className="partnership-card">
             <CardContent className="pt-6 text-center">
-              <div className="icon-container-large bg-primary/10">
-                <Building2 className="w-8 h-8 text-primary" />
+              <div className="icon-container-large bg-primary-10">
+                <Building2 style={{ width: '2rem', height: '2rem' }} className="text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Local Expertise</h3>
               <p className="text-muted-foreground">
@@ -42,10 +42,10 @@ export const Partnership = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-2 hover:border-primary/50 transition-all">
+          <Card className="partnership-card">
             <CardContent className="pt-6 text-center">
-              <div className="icon-container-large bg-accent/10">
-                <Award className="w-8 h-8 text-accent" />
+              <div className="icon-container-large bg-accent-10">
+                <Award style={{ width: '2rem', height: '2rem' }} className="text-accent" />
               </div>
               <h3 className="text-xl font-bold mb-2">Swiss Quality</h3>
               <p className="text-muted-foreground">
@@ -54,10 +54,10 @@ export const Partnership = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-2 hover:border-primary/50 transition-all">
+          <Card className="partnership-card">
             <CardContent className="pt-6 text-center">
-              <div className="icon-container-large bg-secondary/10">
-                <Globe2 className="w-8 h-8 text-secondary" />
+              <div className="icon-container-large bg-secondary-10">
+                <Globe2 style={{ width: '2rem', height: '2rem' }} className="text-secondary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Tri-Continental Network</h3>
               <p className="text-muted-foreground">
@@ -68,28 +68,28 @@ export const Partnership = () => {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <Card className="border-primary/30 bg-card/50 backdrop-blur-sm">
+          <Card className="partnership-highlight-card">
             <CardContent className="pt-8">
               <h3 className="text-2xl font-bold mb-4 text-center">Why Choose Our Partnership?</h3>
               <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">✓</span>
+                <li className="partnership-benefit">
+                  <span className="benefit-check">✓</span>
                   <span><strong>Identical Services:</strong> Same premium web solutions, automation, and SEO expertise</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">✓</span>
+                <li className="partnership-benefit">
+                  <span className="benefit-check">✓</span>
                   <span><strong>Belgian Focus:</strong> Tri-lingual support (NL/FR/EN) and local market understanding</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">✓</span>
+                <li className="partnership-benefit">
+                  <span className="benefit-check">✓</span>
                   <span><strong>EU Compliance:</strong> Belgian and Swiss data centers, GDPR-first approach</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">✓</span>
+                <li className="partnership-benefit">
+                  <span className="benefit-check">✓</span>
                   <span><strong>Global Standards:</strong> Access to Otterino's proven methodologies and international expertise</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">✓</span>
+                <li className="partnership-benefit">
+                  <span className="benefit-check">✓</span>
                   <span><strong>Zero Lock-in:</strong> Complete ownership and portability of your digital assets</span>
                 </li>
               </ul>
@@ -112,10 +112,10 @@ export const Partnership = () => {
           <p className="text-sm text-muted-foreground">
             Learn more about Otterino:{" "}
             <a 
-              href="https://otterino.com" 
+              href="https://otterino.com"
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-primary hover:underline font-medium"
+              className="partnership-link"
             >
               www.otterino.com
             </a>
