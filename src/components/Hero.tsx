@@ -79,7 +79,7 @@ export const Hero = () => {
             <Button 
               variant="hero" 
               size="lg" 
-              className="text-lg group animate-fade-in"
+              className="text-lg group"
               onClick={() => scrollToSection('contact')}
             >
               Schedule Free Consultation

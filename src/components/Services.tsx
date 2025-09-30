@@ -57,7 +57,7 @@ export const Services = () => {
           {services.map((service) => (
             <Card key={service.title} className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-elegant)] group">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-4 group-hover:scale-110 transition-transform animate-fade-in">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <service.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>

@@ -98,7 +98,7 @@ export const Partnership = () => {
                 <Button 
                   variant="hero" 
                   size="lg" 
-                  className="text-lg animate-fade-in"
+                  className="text-lg"
                   onClick={scrollToContact}
                 >
                   Explore Partnership Benefits
