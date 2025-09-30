@@ -102,7 +102,7 @@ export const Contact = () => {
                       required
                     />
                   </div>
-                  <Button variant="hero" className="w-full" size="lg" type="submit">
+                  <Button variant="hero" className="w-full animate-fade-in" size="lg" type="submit">
                     Send Message
                   </Button>
                 </form>
