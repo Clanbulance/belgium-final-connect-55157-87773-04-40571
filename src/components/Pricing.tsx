@@ -46,7 +46,7 @@ const pricingTiers = [
       "Content migration support"
     ],
     cta: "Choose Starter",
-    popular: false
+    popular: true
   },
   {
     name: "Standard",
@@ -62,7 +62,7 @@ const pricingTiers = [
       "30 days bugfix support"
     ],
     cta: "Choose Standard",
-    popular: true
+    popular: false
   },
 ];
 
