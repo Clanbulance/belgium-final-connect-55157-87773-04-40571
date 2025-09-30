@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-belgium.jpg";
 
@@ -74,23 +73,19 @@ export const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col gap-4 justify-center flex-md-row">
-            <Button 
-              variant="hero" 
-              size="lg" 
-              className="text-lg group"
+            <button 
+              className="button-hero group"
               onClick={() => scrollToSection('contact')}
             >
               Schedule Free Consultation
               <ArrowRight style={{ marginLeft: '0.5rem', width: '1.25rem', height: '1.25rem' }} />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="button-outline-hero text-lg"
+            </button>
+            <button 
+              className="button-outline-hero"
               onClick={() => scrollToSection('pricing')}
             >
               View Pricing
-            </Button>
+            </button>
           </div>
 
           {/* Quick Note */}
