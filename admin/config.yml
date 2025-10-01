@@ -1,7 +1,9 @@
 backend:
-  name: git-gateway
-  branch: main
-
+  name: github
+  repo: Clanbulance/belgium-final-connect-55157-87773-04-40571  # replace with your GH repo
+  branch: main                   # branch to commit to
+  auth_scope: repo
+  login: true
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
@@ -141,3 +143,6 @@ collections:
       - { label: "Results", name: "results", widget: "text" }
       - { label: "KPIs", name: "kpis", widget: "list", field: { label: "KPI", name: "kpi", widget: "string" } }
       - { label: "Quote", name: "quote", widget: "string" }
+
+
+publish_mode: editorial_workflow
