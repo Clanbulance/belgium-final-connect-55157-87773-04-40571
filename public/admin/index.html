@@ -1,29 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin</title>
 </head>
 <body>
   <div id="nc-root"></div>
 
   <!-- Load Netlify CMS from CDN -->
-  <script src="https://unpkg.com/netlify-cms@2.15.72/dist/netlify-cms.js"></script>
+  <script src="https://unpkg.com/netlify-cms@2.15.72/dist/netlify-cms.js" onload="initCms()"></script>
 
   <script>
-    // Initialize CMS with Git Gateway (Netlify) or GitHub backend
-    CMS.init({
-      config: {
-        backend: {
-          name: "git-gateway",   // use git-gateway for Netlify-hosted sites
-          branch: "gh-pages"     // or your deploy branch
-        },
-        media_folder: "public/uploads",
-        public_folder: "/uploads",
-        publish_mode: "editorial_workflow"
-      }
-    });
+    function initCms() {
+      CMS.init({
+        config: {
+          backend: {
+            name: "git-gateway",   // Use Git Gateway for Netlify-hosted repo
+            branch: "main"         // Change to your branch if needed
+          },
+          media_folder: "public/uploads",
+          public_folder: "/uploads",
+          publish_mode: "editorial_workflow",
+          collections: [
+            {
+              name: "pages",
+              label: "Pages",
+              folder: "content/pages",
+              create: true,
+              slug: "{{slug}}",
+              fields: [
+                { label: "Title", name: "title", widget: "string" },
+                { label: "Body", name: "body", widget: "markdown" }
+              ]
+            }
+          ]
+        }
+      });
+    }
   </script>
 </body>
 </html>
