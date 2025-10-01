@@ -1,0 +1,36 @@
+{
+  "title": "Complete Digitale Oplossingen",
+  "subtitle": "Alles wat u nodig heeft om uw online aanwezigheid op te bouwen, te automatiseren en te laten groeien",
+  "items": [
+    {
+      "title": "Hoogwaardige Websites",
+      "desc": "Bliksemsnelle, mobile-first architectuur gebouwd voor zichtbaarheid en conversies. Moderne frameworks zonder WordPress ballast.",
+      "outcome": "Lanceerklare platformen die leads en verkoop genereren"
+    },
+    {
+      "title": "Marketing Automatisering",
+      "desc": "Lead capture, content workflows en social media automatisering die werkt terwijl u slaapt.",
+      "outcome": "Geautomatiseerde marketing die handmatig werk met 60% vermindert"
+    },
+    {
+      "title": "Bedrijfsproces Automatisering",
+      "desc": "n8n workflows en AI-aangedreven processen om uw operaties te stroomlijnen en efficiëntie te verbeteren.",
+      "outcome": "Verminderd handmatig werk en verbeterde operationele efficiëntie"
+    },
+    {
+      "title": "SEO & Digitale Zichtbaarheid",
+      "desc": "Zoekoptimalisatie, lokale aanwezigheid en AI antwoordoptimalisatie voor Belgische markten.",
+      "outcome": "Hogere rankings en meer gekwalificeerd verkeer"
+    },
+    {
+      "title": "Meertalige Ondersteuning",
+      "desc": "Volledige ondersteuning voor Nederlands, Frans en Engels om alle Belgische regio's effectief te bereiken.",
+      "outcome": "Bereik en betrek alle Belgische markten"
+    },
+    {
+      "title": "EU Conforme Oplossingen",
+      "desc": "GDPR-conforme hosting met Belgische en Zwitserse datacenters. Uw data blijft in Europa.",
+      "outcome": "Volledige privacy en naleving van regelgeving"
+    }
+  ]
+}
