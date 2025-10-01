@@ -205,6 +205,9 @@ const translations = {
     'services.6.title': 'EU Compliant Solutions',
     'services.6.desc': 'GDPR-compliant hosting with Belgian and Swiss data centers. Your data stays in Europe.',
     'services.6.outcome': 'Complete privacy and regulatory compliance',
+    'services.7.title': 'This is our new test tile',
+    'services.7.desc': 'Sick test tile',
+    'services.7.outcome': 'Complete privacy and regulatory compliance',
     
     // Pricing
     'pricing.title': 'Transparent Pricing',
