@@ -8,17 +8,16 @@
 <body>
   <div id="nc-root"></div>
 
-  <!-- Load Netlify CMS from CDN -->
+  <!-- Load Netlify CMS from jsDelivr CDN -->
   <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.15.72/dist/netlify-cms.js" onload="initCms()"></script>
-
 
   <script>
     function initCms() {
       CMS.init({
         config: {
           backend: {
-            name: "git-gateway",   // Use Git Gateway for Netlify-hosted repo
-            branch: "main"         // Change to your branch if needed
+            name: "git-gateway",
+            branch: "main"
           },
           media_folder: "public/uploads",
           public_folder: "/uploads",
