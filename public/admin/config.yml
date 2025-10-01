@@ -1,10 +1,6 @@
 backend:
-  name: github
-  repo: "https://clanbulance.github.io/belgium-final-connect-55157-87773-04-40571"  # replace with your GH repo
-  branch: gh-pages                         # branch where content lives
-  auth_type: implicit    
-  app_id: Ov23lijp0qYqmmWmfXnY    # GitHub OAuth App Client ID
-
+  name: git-gateway
+  branch: gh-pages  # or main
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
