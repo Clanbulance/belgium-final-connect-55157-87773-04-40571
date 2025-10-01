@@ -25,7 +25,7 @@ const translations = {
     'hero.title': 'Premium Weboplossingen voor',
     'hero.title.gradient': 'Belgische Bedrijven',
     'hero.subtitle': 'Zwitserse kwaliteit ontmoet Belgische expertise. Wij leveren snelle, veilige en geautomatiseerde websites die groei stimuleren.',
-    'hero.value1.title': 'Geen Vendor Lock-in',
+    'hero.value1.title': 'Geen vendor Lock-in',
     'hero.value1.desc': 'Volledig eigendom van uw code en data',
     'hero.value2.title': 'Drietalige Ondersteuning',
     'hero.value2.desc': 'Nederlands, Frans en Engels klaar',
