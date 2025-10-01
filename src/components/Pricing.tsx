@@ -1,132 +1,154 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { toast } from "sonner";
-import { useState, useEffect } from "react";
-
-interface PricingPackage {
-  name: string;
-  price: string;
-  delivery: string;
-  desc: string;
-  popular: boolean;
-  features: string[];
-  cta: string;
-}
-
-interface PricingData {
-  title: string;
-  subtitle: string;
-  packages: PricingPackage[];
-}
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const scrollToContact = () => {
-  const contactSection = document.getElementById('contact');
-  if (contactSection) {
-    contactSection.scrollIntoView({ behavior: 'smooth' });
+  const element = document.getElementById('contact');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
 
 const handlePricingClick = (tierName: string) => {
   toast.success(`Great choice! Let's discuss the ${tierName} package.`, {
-    description: "We'll get in touch with you shortly.",
+    description: "Scroll down to fill out the contact form."
   });
   scrollToContact();
 };
 
 export const Pricing = () => {
-  const { language, t } = useLanguage();
-  const [pricingData, setPricingData] = useState<PricingData | null>(null);
+  const { t } = useLanguage();
 
-  useEffect(() => {
-    const loadPricing = async () => {
-      try {
-        const module = await import(`../content/pricing.${language}.json`);
-        setPricingData(module.default);
-      } catch (error) {
-        console.error('Failed to load pricing:', error);
-      }
-    };
-    loadPricing();
-  }, [language]);
-
-  if (!pricingData) return null;
+  const pricingTiers = [
+    {
+      name: t('pricing.tier1.name'),
+      price: "€399",
+      delivery: "2-5 " + (t('pricing.delivery').toLowerCase().includes('oplevering') ? 'dagen' : 'days'),
+      description: t('pricing.tier1.desc'),
+      features: [
+        t('pricing.tier1.f1'),
+        t('pricing.tier1.f2'),
+        t('pricing.tier1.f3'),
+        t('pricing.tier1.f4'),
+        t('pricing.tier1.f5')
+      ],
+      cta: t('pricing.cta'),
+      popular: false
+    },
+    {
+      name: t('pricing.tier2.name'),
+      price: "€1,990",
+      delivery: "1-2 " + (t('pricing.delivery').toLowerCase().includes('oplevering') ? 'weken' : 'weeks'),
+      description: t('pricing.tier2.desc'),
+      features: [
+        t('pricing.tier2.f1'),
+        t('pricing.tier2.f2'),
+        t('pricing.tier2.f3'),
+        t('pricing.tier2.f4'),
+        t('pricing.tier2.f5')
+      ],
+      cta: t('pricing.cta'),
+      popular: true
+    },
+    {
+      name: t('pricing.tier3.name'),
+      price: "€4,900",
+      delivery: "2-4 " + (t('pricing.delivery').toLowerCase().includes('oplevering') ? 'weken' : 'weeks'),
+      description: t('pricing.tier3.desc'),
+      features: [
+        t('pricing.tier3.f1'),
+        t('pricing.tier3.f2'),
+        t('pricing.tier3.f3'),
+        t('pricing.tier3.f4'),
+        t('pricing.tier3.f5'),
+        t('pricing.tier3.f6')
+      ],
+      cta: t('pricing.cta'),
+      popular: false
+    },
+  ];
 
   return (
-    <section id="pricing" className="py-24">
+    <section id="pricing" className="py-24" style={{ backgroundColor: 'var(--background)' }}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="section-title">
-            {pricingData.title}
+            {t('pricing.title')}
           </h2>
           <p className="section-subtitle">
-            {pricingData.subtitle}
+            {t('pricing.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-md-2 grid-lg-3 gap-8 mb-12">
-          {pricingData.packages.map((tier) => (
+        <div className="grid grid-md-2 grid-lg-3 gap-8 max-w-6xl mx-auto">
+          {pricingTiers.map((tier) => (
             <Card 
               key={tier.name} 
-              className={`relative flex flex-col ${tier.popular ? 'border-primary shadow-lg scale-105' : ''}`}
+              className={`pricing-card relative ${tier.popular ? 'pricing-card-popular' : ''}`}
             >
               {tier.popular && (
-                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-accent">
-                  {t('pricing.popular')}
-                </Badge>
-              )}
-              <CardHeader>
-                <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                <CardDescription>{tier.desc}</CardDescription>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">{tier.price}</span>
+                <div className="pricing-badge-container">
+                  <span className="popular-badge">
+                    {t('pricing.popular')}
+                  </span>
                 </div>
-                <p className="text-sm text-muted-foreground">
+              )}
+              
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-2xl mb-4">{tier.name}</CardTitle>
+                <div className="mb-3">
+                  <span className="text-4xl font-bold text-primary">{tier.price}</span>
+                </div>
+                <div className="text-sm text-muted-foreground mb-4">
                   {t('pricing.delivery')}: {tier.delivery}
-                </p>
+                </div>
+                <CardDescription className="text-base">{tier.description}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="space-y-3">
-                  {tier.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
+              
+              <CardContent>
+                <ul className="space-y-3 mb-8">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="pricing-feature">
+                      <Check style={{ width: '1.25rem', height: '1.25rem', flexShrink: 0, marginTop: '0.125rem' }} className="text-accent" />
+                      <span className="text-sm text-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-              <CardFooter>
+                
                 <Button 
-                  className="w-full" 
-                  variant={tier.popular ? "default" : "outline"}
+                  variant={tier.popular ? "hero" : "outline"}
+                  className="w-full"
+                  size="lg"
                   onClick={() => handlePricingClick(tier.name)}
                 >
                   {tier.cta}
                 </Button>
-              </CardFooter>
+              </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* SEO/Geo Fix Package */}
-        <Card className="bg-gradient-to-r from-accent/10 to-primary/10 border-accent">
-          <CardHeader>
-            <CardTitle className="text-2xl">{t('pricing.seo.title')}</CardTitle>
-            <p className="text-sm text-muted-foreground">{t('pricing.seo.delivery')}</p>
-          </CardHeader>
-          <CardContent>
-            <p className="mb-4">{t('pricing.seo.desc')}</p>
-            <Button 
-              variant="outline" 
-              className="border-accent hover:bg-accent/10"
-              onClick={() => handlePricingClick('SEO/Geo Fix')}
-            >
-              {t('pricing.seo.cta')}
-            </Button>
-          </CardContent>
-        </Card>
+        <div className="mt-20 text-center">
+          <Card className="pricing-seo-card">
+            <CardHeader>
+              <CardTitle className="text-2xl">{t('pricing.seo.title')}</CardTitle>
+              <div className="text-3xl font-bold text-primary">€990</div>
+              <CardDescription>{t('pricing.seo.delivery')}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-4">{t('pricing.seo.desc')}</p>
+              <Button 
+                variant="secondary" 
+                size="lg"
+                onClick={() => handlePricingClick('SEO / Geo Fix')}
+              >
+                {t('pricing.seo.cta')}
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </section>
   );
