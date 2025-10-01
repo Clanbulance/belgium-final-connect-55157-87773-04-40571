@@ -1,63 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Admin</title>
 </head>
 <body>
   <div id="nc-root"></div>
 
-  <!-- prevent auto init -->
-  <script>window.CMS_MANUAL_INIT = true;</script>
-
-  <!-- load Netlify CMS from CDN; call initCms on load -->
-  <script
-    id="netlify-cms-script"
-    src="https://unpkg.com/netlify-cms@^2.15.72/dist/netlify-cms.js"
-    onload="initCms()"
-    onerror="console.error('Failed to load netlify-cms.js — check network/CSP')"
-  ></script>
+  <!-- Load Netlify CMS from CDN -->
+  <script src="https://unpkg.com/netlify-cms@2.15.72/dist/netlify-cms.js"></script>
 
   <script>
-    function initCms() {
-      // If the script attached CMS already, init immediately
-      if (window.CMS) {
-        doInit();
-        return;
+    // Initialize CMS with Git Gateway (Netlify) or GitHub backend
+    CMS.init({
+      config: {
+        backend: {
+          name: "git-gateway",   // use git-gateway for Netlify-hosted sites
+          branch: "gh-pages"     // or your deploy branch
+        },
+        media_folder: "public/uploads",
+        public_folder: "/uploads",
+        publish_mode: "editorial_workflow"
       }
-
-      // Otherwise poll briefly (handles rare timing race)
-      var tries = 0;
-      var poll = setInterval(function () {
-        tries++;
-        if (window.CMS) {
-          clearInterval(poll);
-          doInit();
-        } else if (tries > 50) { // ~5s timeout
-          clearInterval(poll);
-          console.error('Netlify CMS never appeared. Check network tab for netlify-cms.js, or CSP/mixed-content issues.');
-        }
-      }, 100);
-    }
-
-    function doInit() {
-      CMS.init({
-        config: {
-          backend: {
-            name: 'github',
-            repo: 'Clanbulance/belgium-final-connect-55157-87773-04-40571',
-            branch: 'gh-pages',
-            auth_type: 'implicit',
-            app_id: 'Ov23lijp0qYqmmWmfXnY'
-          },
-          media_folder: 'public/uploads',
-          public_folder: '/uploads',
-          publish_mode: 'editorial_workflow',
-          site_url: 'https://clanbulance.github.io/belgium-final-connect-55157-87773-04-40571'
-        }
-      });
-    }
+    });
   </script>
 </body>
 </html>
