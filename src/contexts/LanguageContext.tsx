@@ -205,9 +205,6 @@ const translations = {
     'services.6.title': 'EU Compliant Solutions',
     'services.6.desc': 'GDPR-compliant hosting with Belgian and Swiss data centers. Your data stays in Europe.',
     'services.6.outcome': 'Complete privacy and regulatory compliance',
-    'services.7.title': 'This is our new test tile',
-    'services.7.desc': 'Sick test tile',
-    'services.7.outcome': 'Complete privacy and regulatory compliance',
     
     // Pricing
     'pricing.title': 'Transparent Pricing',
@@ -312,21 +309,44 @@ const translations = {
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>('nl'); // Default to Dutch
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang && (savedLang === 'nl' || savedLang === 'en')) {
-      setLanguageState(savedLang);
-    }
+    const initializeLanguage = async () => {
+      const savedLang = localStorage.getItem('language') as Language;
+      const initialLang = (savedLang && (savedLang === 'nl' || savedLang === 'en')) ? savedLang : 'nl';
+      
+      // Load both languages on init
+      const [nlTranslations, enTranslations] = await Promise.all([
+        loadTranslations('nl'),
+        loadTranslations('en')
+      ]);
+      
+      translationsCache = {
+        nl: nlTranslations,
+        en: enTranslations
+      };
+      
+      setLanguageState(initialLang);
+      setIsLoaded(true);
+    };
+    
+    initializeLanguage();
   }, []);
 
-  const setLanguage = (lang: Language) => {
+  const setLanguage = async (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('language', lang);
+    
+    // Load translations if not cached
+    if (Object.keys(translationsCache[lang]).length === 0) {
+      translationsCache[lang] = await loadTranslations(lang);
+    }
   };
 
   const t = (key: string): string => {
-    return translations[language][key] || key;
+    if (!isLoaded) return key;
+    return translationsCache[language]?.[key] || key;
   };
 
   return (

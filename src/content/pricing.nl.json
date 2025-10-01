@@ -1,0 +1,52 @@
+{
+  "title": "Transparante Prijzen",
+  "subtitle": "Geen verborgen kosten. Geen vendor lock-in. Kies het pakket dat bij u past.",
+  "packages": [
+    {
+      "name": "Hero Landing",
+      "price": "€399",
+      "delivery": "48 uur",
+      "desc": "Perfect voor campagnes en snelle lanceringen",
+      "popular": false,
+      "features": [
+        "Enkele landingspagina",
+        "Mobiel-geoptimaliseerd ontwerp",
+        "Contactformulier integratie",
+        "Basis tracking setup",
+        "30-min intro + overdracht gesprek"
+      ],
+      "cta": "Kies Hero Landing"
+    },
+    {
+      "name": "Starter",
+      "price": "€899",
+      "delivery": "1 week",
+      "desc": "Ideaal voor kleine bedrijven die online gaan",
+      "popular": false,
+      "features": [
+        "3 pagina's (Home, Over, Contact)",
+        "Basis mobiele layout",
+        "Basis SEO optimalisatie",
+        "2 uur overdracht training",
+        "Content migratie ondersteuning"
+      ],
+      "cta": "Kies Starter"
+    },
+    {
+      "name": "Standard",
+      "price": "€1.499",
+      "delivery": "2 weken",
+      "desc": "Meest populair voor groeiende bedrijven",
+      "popular": true,
+      "features": [
+        "Tot 6 pagina's",
+        "PWA basics inbegrepen",
+        "Core Web Vitals optimalisatie",
+        "Basis SEO/GEO optimalisatie",
+        "Contactformulieren & integraties",
+        "30 dagen bugfix support"
+      ],
+      "cta": "Kies Standard"
+    }
+  ]
+}
