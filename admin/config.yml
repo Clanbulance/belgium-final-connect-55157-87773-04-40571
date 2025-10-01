@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: Clanbulance/belgium-final-connect-55157-87773-04-40571  # replace with your GH repo
-  branch: main                        # branch where content lives
+  branch: gh-pages                         # branch where content lives
   auth_type: implicit    
   app_id: Ov23lijp0qYqmmWmfXnY    # GitHub OAuth App Client ID
 
