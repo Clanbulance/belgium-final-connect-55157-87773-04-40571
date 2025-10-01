@@ -1,20 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content Manager</title>
+    <meta charset="utf-8">
+    <title>Admin</title>
   </head>
   <body>
-    <!-- Prevent auto-init to avoid old cached behavior -->
-    <script>window.CMS_MANUAL_INIT = true;</script>
-
-    <!-- Load Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-
-    <!-- Initialize CMS manually with your config -->
     <script>
-      CMS.init({ config: '/admin/config.yml' });
+      // prevent auto init
+      window.CMS_MANUAL_INIT = true;
+    </script>
+    <script src="https://unpkg.com/netlify-cms@^2.15.72/dist/netlify-cms.js"></script>
+    <script>
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'Clanbulance/belgium-final-connect-55157-87773-04-40571',
+            branch: 'gh-pages',
+            auth_type: 'implicit',
+            app_id: 'Ov23lijp0qYqmmWmfXnY',
+          },
+          media_folder: 'public/uploads',
+          public_folder: '/uploads',
+          publish_mode: 'editorial_workflow',
+          site_url: 'https://clanbulance.github.io/belgium-final-connect-55157-87773-04-40571'
+        }
+      })
     </script>
   </body>
 </html>
