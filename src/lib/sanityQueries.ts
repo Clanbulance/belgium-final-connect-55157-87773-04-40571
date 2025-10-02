@@ -17,12 +17,20 @@ export async function fetchAllTranslations(): Promise<AllTranslations> {
     if (section) {
       // Convert field names to dot notation (e.g., "services" becomes "nav.services")
       Object.entries(section.nl || {}).forEach(([key, value]) => {
-        const translationKey = `${sectionName}.${key.replace(/_/g, '.')}`;
+        // For services section, strip "service" prefix from field names like "service1_title" -> "1.title"
+        const processedKey = sectionName === 'services' && key.startsWith('service')
+          ? key.replace(/^service/, '')
+          : key;
+        const translationKey = `${sectionName}.${processedKey.replace(/_/g, '.')}`;
         translations.nl[translationKey] = value;
       });
 
       Object.entries(section.en || {}).forEach(([key, value]) => {
-        const translationKey = `${sectionName}.${key.replace(/_/g, '.')}`;
+        // For services section, strip "service" prefix from field names like "service1_title" -> "1.title"
+        const processedKey = sectionName === 'services' && key.startsWith('service')
+          ? key.replace(/^service/, '')
+          : key;
+        const translationKey = `${sectionName}.${processedKey.replace(/_/g, '.')}`;
         translations.en[translationKey] = value;
       });
     }
