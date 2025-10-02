@@ -1,0 +1,41 @@
+export default {
+  name: 'services',
+  title: 'Services Section',
+  type: 'document',
+  fields: [
+    {
+      name: 'nl',
+      title: '🇳🇱 Dutch (Nederlands)',
+      type: 'object',
+      fields: [
+        { name: 'title', type: 'string', title: 'Title' },
+        { name: 'subtitle', type: 'text', title: 'Subtitle' },
+        { name: 'service1_title', type: 'string', title: 'Service 1 Title' },
+        { name: 'service1_desc', type: 'text', title: 'Service 1 Description' },
+        { name: 'service2_title', type: 'string', title: 'Service 2 Title' },
+        { name: 'service2_desc', type: 'text', title: 'Service 2 Description' },
+        { name: 'service3_title', type: 'string', title: 'Service 3 Title' },
+        { name: 'service3_desc', type: 'text', title: 'Service 3 Description' },
+        { name: 'service4_title', type: 'string', title: 'Service 4 Title' },
+        { name: 'service4_desc', type: 'text', title: 'Service 4 Description' },
+      ],
+    },
+    {
+      name: 'en',
+      title: '🇬🇧 English',
+      type: 'object',
+      fields: [
+        { name: 'title', type: 'string', title: 'Title' },
+        { name: 'subtitle', type: 'text', title: 'Subtitle' },
+        { name: 'service1_title', type: 'string', title: 'Service 1 Title' },
+        { name: 'service1_desc', type: 'text', title: 'Service 1 Description' },
+        { name: 'service2_title', type: 'string', title: 'Service 2 Title' },
+        { name: 'service2_desc', type: 'text', title: 'Service 2 Description' },
+        { name: 'service3_title', type: 'string', title: 'Service 3 Title' },
+        { name: 'service3_desc', type: 'text', title: 'Service 3 Description' },
+        { name: 'service4_title', type: 'string', title: 'Service 4 Title' },
+        { name: 'service4_desc', type: 'text', title: 'Service 4 Description' },
+      ],
+    },
+  ],
+};
