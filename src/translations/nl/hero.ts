@@ -1,0 +1,17 @@
+export const hero = {
+  'hero.badge': 'Officiële Belgische Partner van Otterino',
+  'hero.title': 'Premium Weboplossingen voor',
+  'hero.title.gradient': 'Belgische Bedrijven',
+  'hero.subtitle': 'Zwitserse kwaliteit ontmoet Belgische expertise. Wij leveren snelle, veilige en geautomatiseerde websites die groei stimuleren.',
+  'hero.value1.title': 'Geen vendor Lockin',
+  'hero.value1.desc': 'Volledig eigendom van uw code en data',
+  'hero.value2.title': 'Drietalige Ondersteuning',
+  'hero.value2.desc': 'Nederlands, Frans en Engels klaar',
+  'hero.value3.title': 'EU Conforme Hosting',
+  'hero.value3.desc': 'Belgische & Zwitserse datacenters',
+  'hero.value4.title': 'Slimme automatisering',
+  'hero.value4.desc': 'Marketing & bedrijfsproces automatisering',
+  'hero.cta.primary': 'Plan Gratis Consultatie',
+  'hero.cta.secondary': 'Bekijk Prijzen',
+  'hero.note': '🚀 Express landingspagina? Eerste versie in 48 uur. Vanaf €399',
+};

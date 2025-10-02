@@ -1,0 +1,17 @@
+export const hero = {
+  'hero.badge': 'Official Belgian Partner of Otterino',
+  'hero.title': 'Premium Web Solutions for',
+  'hero.title.gradient': 'Belgian Businesses',
+  'hero.subtitle': 'Swiss-engineered quality meets Belgian expertise. We deliver fast, secure, and automated websites that drive growth.',
+  'hero.value1.title': 'No Vendor Lock-in',
+  'hero.value1.desc': 'Complete ownership of your code and data',
+  'hero.value2.title': 'Tri-Lingual Support',
+  'hero.value2.desc': 'Dutch, French, and English ready',
+  'hero.value3.title': 'EU Compliant Hosting',
+  'hero.value3.desc': 'Belgian & Swiss data centers',
+  'hero.value4.title': 'Smart Automation',
+  'hero.value4.desc': 'Marketing & business process automation',
+  'hero.cta.primary': 'Schedule Free Consultation',
+  'hero.cta.secondary': 'View Pricing',
+  'hero.note': '🚀 Express landing page? First draft in 48 hours. Starting from €399',
+};

@@ -1,0 +1,17 @@
+export const footer = {
+  'footer.desc': 'Swiss-engineered web solutions for Belgian businesses. Premium quality, zero vendor lock-in, complete ownership.',
+  'footer.collab': 'In collaboration with',
+  'footer.services.title': 'Services',
+  'footer.services.1': 'Web Development',
+  'footer.services.2': 'Marketing Automation',
+  'footer.services.3': 'SEO & Visibility',
+  'footer.services.4': 'Business Automation',
+  'footer.company.title': 'Company',
+  'footer.company.1': 'Partnership',
+  'footer.company.2': 'Pricing',
+  'footer.company.3': 'Contact',
+  'footer.company.4': 'Otterino Global',
+  'footer.copyright': '© 2025 RJDP Consulting. All rights reserved.',
+  'footer.privacy': 'Privacy Policy',
+  'footer.terms': 'Terms of Service',
+};
