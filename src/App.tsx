@@ -8,7 +8,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Studio from "./pages/Studio";
 import { HashRouter } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/next"
 
 const queryClient = new QueryClient();
 
@@ -18,7 +17,6 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <Analytics />
         <HashRouter>
           <Routes>
             <Route path="/" element={<Index />} />
