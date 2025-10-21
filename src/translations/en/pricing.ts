@@ -26,8 +26,8 @@ export const pricing = {
   'pricing.tier3.f5': 'Contact forms & integrations',
   'pricing.tier3.f6': '30 days bugfix support',
   'pricing.cta': 'Choose',
-  'pricing.seo.title': 'SEO / Geo Fix (Quick)',
-  'pricing.seo.delivery': '3-7 days delivery',
-  'pricing.seo.desc': 'Technical SEO quick fixes, Google My Business review, NAP consistency, and prioritized action list.',
-  'pricing.seo.cta': 'Request SEO Fix',
+  'pricing.seo.title': 'Automation Package',
+  'pricing.seo.delivery': '1-2 weeks delivery',
+  'pricing.seo.desc': 'Automate repetitive tasks like appointment reminders, follow-up emails, lead notifications, and customer responses.',
+  'pricing.seo.cta': 'Get Automation Package',
 };

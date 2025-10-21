@@ -133,7 +133,7 @@ export const Pricing = () => {
             </CardHeader>
             <CardContent>
               <p className="mb-4">{t("pricing.seo.desc")}</p>
-              <Button variant="secondary" size="lg" onClick={() => handlePricingClick("SEO / Geo Fix")}>
+              <Button variant="secondary" size="lg" onClick={() => handlePricingClick("Automation Package")}>
                 {t("pricing.seo.cta")}
               </Button>
             </CardContent>

@@ -26,8 +26,8 @@ export const pricing = {
   'pricing.tier3.f5': 'Contactformulieren & integraties',
   'pricing.tier3.f6': '30 dagen bugfix support',
   'pricing.cta': 'Kies',
-  'pricing.seo.title': 'SEO / Geo Fix (Snel)',
-  'pricing.seo.delivery': '3-7 dagen oplevering',
-  'pricing.seo.desc': 'Technische SEO snelle fixes, Google My Business review, NAP consistentie en geprioriteerde actielijst.',
-  'pricing.seo.cta': 'Vraag SEO Fix aan',
+  'pricing.seo.title': 'Automatisering Pakket',
+  'pricing.seo.delivery': '1-2 weken oplevering',
+  'pricing.seo.desc': 'Automatiseer repetitieve taken zoals afspraakherinneringen, opvolg-emails, lead notificaties en klantreacties.',
+  'pricing.seo.cta': 'Krijg Automatisering Pakket',
 };
