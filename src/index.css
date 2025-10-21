@@ -31,8 +31,11 @@
   --gradient-hero: linear-gradient(135deg, hsl(180 100% 25%), hsl(180 85% 40%));
   --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%), hsl(43 84% 59%));
   --gradient-secondary-accent: linear-gradient(to right, hsl(43 74% 49%), hsl(158 64% 35%));
+  --gradient-green: linear-gradient(135deg, hsl(158 64% 35%), hsl(158 64% 50%));
+  --gradient-teal: linear-gradient(135deg, hsl(180 85% 40%), hsl(158 64% 45%));
   --shadow-elegant: 0 10px 40px -10px hsl(180 100% 25% / 0.3);
   --shadow-glow: 0 0 60px hsl(180 85% 40% / 0.2);
+  --shadow-green: 0 8px 32px -8px hsl(158 64% 35% / 0.3);
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -316,15 +319,17 @@ button {
 .value-card-minimal {
   text-align: center;
   padding: 1.5rem;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(180 100% 97%) 100%);
+  border: 2px solid var(--border);
   border-radius: 0.75rem;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
 .value-card-minimal:hover {
-  border-color: var(--primary);
-  box-shadow: 0 4px 12px hsl(0 0% 0% / 0.05);
+  border-color: hsl(158 64% 45%);
+  box-shadow: var(--shadow-green);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, hsl(180 100% 96%) 0%, hsl(158 70% 94%) 100%);
 }
 
 /* =================================
@@ -463,21 +468,27 @@ button {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(180 100% 96%) 100%);
 }
 
 .service-card:hover {
-  border-color: hsl(180 100% 25% / 0.5);
-  box-shadow: var(--shadow-elegant);
+  border-color: hsl(158 64% 45%);
+  box-shadow: var(--shadow-green);
   transform: translateY(-4px);
+  background: linear-gradient(135deg, hsl(180 100% 96%) 0%, hsl(158 70% 92%) 100%);
 }
 
 .contact-info-card {
   border: 2px solid var(--border);
   transition: all 0.3s;
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(180 100% 97%) 100%);
 }
 
 .contact-info-card:hover {
-  border-color: hsl(180 100% 25% / 0.5);
+  border-color: hsl(158 64% 45%);
+  box-shadow: var(--shadow-green);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, hsl(180 100% 96%) 0%, hsl(158 70% 94%) 100%);
 }
 
 /* =================================
@@ -492,12 +503,15 @@ button {
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-  background: linear-gradient(to bottom right, var(--primary), var(--primary-glow));
-  transition: transform 0.3s;
+  background: var(--gradient-teal);
+  box-shadow: var(--shadow-green);
+  transition: all 0.3s;
 }
 
 .group:hover .icon-container-primary {
   transform: scale(1.1);
+  background: var(--gradient-green);
+  box-shadow: 0 12px 40px -10px hsl(158 64% 35% / 0.4);
 }
 
 .icon-container-large {
@@ -541,10 +555,14 @@ button {
 .partnership-card {
   border: 2px solid var(--border);
   transition: all 0.3s;
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(180 100% 97%) 100%);
 }
 
 .partnership-card:hover {
-  border-color: hsl(180 100% 25% / 0.5);
+  border-color: hsl(158 64% 45%);
+  box-shadow: var(--shadow-green);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, hsl(180 100% 96%) 0%, hsl(158 70% 94%) 100%);
 }
 
 .partnership-highlight-card {
@@ -645,11 +663,14 @@ button {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(180 100% 97%) 100%);
 }
 
 .pricing-card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-green);
   transform: translateY(-4px);
+  border-color: hsl(158 64% 45%);
+  background: linear-gradient(135deg, hsl(180 100% 96%) 0%, hsl(158 70% 94%) 100%);
 }
 
 .pricing-card-popular {
@@ -675,8 +696,8 @@ button {
 .pricing-seo-card {
   max-width: 56rem;
   margin: 0 auto;
-  border: 2px solid hsl(43 74% 49% / 0.4);
-  background-color: hsl(43 74% 49% / 0.05);
+  border: 2px solid hsl(158 64% 45% / 0.5);
+  background: linear-gradient(135deg, hsl(158 64% 97%) 0%, hsl(180 100% 97%) 100%);
 }
 
 
