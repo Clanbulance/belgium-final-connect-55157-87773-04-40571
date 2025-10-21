@@ -1,5 +1,5 @@
 export const footer = {
-  'footer.desc': 'Zwitserse weboplossingen voor Belgische bedrijven. Premium kwaliteit, geen vendor lock-in, volledig eigendom.',
+  'footer.desc': 'Premium weboplossingen voor Belgische bedrijven. Kwaliteitsengineering, geen vendor lock-in, volledig eigendom.',
   'footer.collab': 'In samenwerking met',
   'footer.services.title': 'Diensten',
   'footer.services.1': 'Webontwikkeling',

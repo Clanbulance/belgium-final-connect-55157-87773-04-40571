@@ -17,6 +17,6 @@ export const services = {
   'services.5.desc': 'Volledige ondersteuning voor Nederlands, Frans en Engels om alle Belgische regio\'s effectief te bereiken.',
   'services.5.outcome': 'Bereik en betrek alle Belgische markten',
   'services.6.title': 'EU Conforme Oplossingen',
-  'services.6.desc': 'GDPR-conforme hosting met Belgische en Zwitserse datacenters. Uw data blijft in Europa.',
+  'services.6.desc': 'GDPR-conforme hosting met Europese datacenters. Uw data blijft in Europa.',
   'services.6.outcome': 'Volledige privacy en naleving van regelgeving',
 };

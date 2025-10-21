@@ -1,5 +1,5 @@
 export const footer = {
-  'footer.desc': 'Swiss-engineered web solutions for Belgian businesses. Premium quality, zero vendor lock-in, complete ownership.',
+  'footer.desc': 'Premium web solutions for Belgian businesses. Quality engineering, zero vendor lock-in, complete ownership.',
   'footer.collab': 'In collaboration with',
   'footer.services.title': 'Services',
   'footer.services.1': 'Web Development',
