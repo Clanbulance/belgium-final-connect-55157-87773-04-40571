@@ -128,7 +128,7 @@ export const Pricing = () => {
           <Card className="pricing-seo-card">
             <CardHeader>
               <CardTitle className="text-2xl">{t("pricing.seo.title")}</CardTitle>
-              <div className="text-3xl font-bold text-primary">€990</div>
+              <div className="text-3xl font-bold text-primary">€999</div>
               <CardDescription>{t("pricing.seo.delivery")}</CardDescription>
             </CardHeader>
             <CardContent>
