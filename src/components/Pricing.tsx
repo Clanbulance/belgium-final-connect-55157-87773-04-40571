@@ -24,7 +24,7 @@ export const Pricing = () => {
   const pricingTiers = [
     {
       name: t('pricing.tier1.name'),
-      price: "€999",
+      price: "€499",
       delivery: "2-5 " + (t('pricing.delivery').toLowerCase().includes('oplevering') ? 'dagen' : 'days'),
       description: t('pricing.tier1.desc'),
       features: [

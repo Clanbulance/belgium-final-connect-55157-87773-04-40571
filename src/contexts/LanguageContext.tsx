@@ -1,57 +1,19 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { translations as fallbackTranslations, Language } from '@/translations';
-import { fetchAllTranslations } from '@/lib/sanityQueries';
-import type { AllTranslations } from '@/types/sanity';
+import { translations, Language } from '@/translations';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
-  loading: boolean;
-  error: Error | null;
-  refreshTranslations: () => Promise<void>;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('nl');
-  const [translations, setTranslations] = useState<AllTranslations>(fallbackTranslations);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
-
-  const loadTranslations = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const sanityTranslations = await fetchAllTranslations();
-      
-      // Merge with fallback translations to ensure no missing keys
-      const mergedTranslations = {
-        nl: { ...fallbackTranslations.nl, ...sanityTranslations.nl },
-        en: { ...fallbackTranslations.en, ...sanityTranslations.en },
-      };
-      
-      setTranslations(mergedTranslations);
-    } catch (err) {
-      console.error('Error loading translations from Sanity:', err);
-      setError(err as Error);
-      // Fall back to static translations on error
-      setTranslations(fallbackTranslations);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
+  const [language, setLanguageState] = useState<Language>(() => {
     const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang && (savedLang === 'nl' || savedLang === 'en')) {
-      setLanguageState(savedLang);
-    }
-    
-    // Load translations from Sanity
-    loadTranslations();
-  }, []);
+    return (savedLang && (savedLang === 'nl' || savedLang === 'en')) ? savedLang : 'nl';
+  });
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
@@ -62,12 +24,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return translations[language][key] || key;
   };
 
-  const refreshTranslations = async () => {
-    await loadTranslations();
-  };
-
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, loading, error, refreshTranslations }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
