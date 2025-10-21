@@ -24,7 +24,7 @@ export const Pricing = () => {
   const pricingTiers = [
     {
       name: t('pricing.tier1.name'),
-      price: "€399",
+      price: "€999",
       delivery: "2-5 " + (t('pricing.delivery').toLowerCase().includes('oplevering') ? 'dagen' : 'days'),
       description: t('pricing.tier1.desc'),
       features: [
@@ -39,7 +39,7 @@ export const Pricing = () => {
     },
     {
       name: t('pricing.tier2.name'),
-      price: "€1,990",
+      price: "€1,999",
       delivery: "1-2 " + (t('pricing.delivery').toLowerCase().includes('oplevering') ? 'weken' : 'weeks'),
       description: t('pricing.tier2.desc'),
       features: [

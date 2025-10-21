@@ -1,5 +1,4 @@
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-belgium.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const scrollToSection = (id: string) => {
@@ -14,14 +13,6 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20">
-      {/* Background Image */}
-      <div 
-        className="hero-background"
-        style={{
-          '--hero-image': `url(${heroImage})`
-        } as React.CSSProperties}
-      />
-      
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 py-16">
         <div className="max-w-4xl mx-auto text-center">
