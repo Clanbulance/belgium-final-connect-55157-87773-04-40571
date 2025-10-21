@@ -15,12 +15,6 @@ export const Hero = () => {
     <section className="hero-minimal">
       <div className="container mx-auto px-4 py-24">
         <div className="max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="hero-badge-minimal">
-            <span className="text-secondary font-semibold">★★★★★</span>
-            <span>{t('hero.badge')}</span>
-          </div>
-
           {/* Headline */}
           <h1 className="hero-title-minimal">
             {t('hero.title')}
