@@ -122,7 +122,7 @@ export const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">{t('contact.email.title')}</h3>
-                      <p className="text-muted-foreground">info@otterino.be</p>
+                      <p className="text-muted-foreground">info@rjdp.be</p>
                       <p className="text-sm text-muted-foreground mt-2">
                         {t('contact.email.response')}
                       </p>

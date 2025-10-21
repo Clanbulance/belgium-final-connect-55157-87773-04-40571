@@ -28,15 +28,7 @@ export const Footer = () => {
               {t('footer.desc')}
             </p>
             <p className="text-xs footer-text-light">
-              {t('footer.collab')}{" "}
-              <a 
-                href="https://otterino.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="footer-link"
-              >
-                Otterino.com
-              </a>
+              {t('footer.collab')} RJDP Consulting
             </p>
           </div>
 
@@ -58,16 +50,7 @@ export const Footer = () => {
               <li><button onClick={() => scrollToSection('partnership')} className="footer-link">{t('footer.company.1')}</button></li>
               <li><button onClick={() => scrollToSection('pricing')} className="footer-link">{t('footer.company.2')}</button></li>
               <li><button onClick={() => scrollToSection('contact')} className="footer-link">{t('footer.company.3')}</button></li>
-              <li>
-                <a 
-                  href="https://otterino.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="footer-link"
-                >
-                  {t('footer.company.4')}
-                </a>
-              </li>
+              <li><button onClick={() => scrollToSection('services')} className="footer-link">{t('footer.company.4')}</button></li>
             </ul>
           </div>
         </div>

@@ -1,5 +1,5 @@
 export const hero = {
-  'hero.badge': 'Officiële Belgische Partner van Otterino',
+  'hero.badge': 'Premium Webontwikkeling Partner',
   'hero.title': 'Premium Weboplossingen voor',
   'hero.title.gradient': 'Belgische Bedrijven',
   'hero.subtitle': 'Wij leveren snelle, veilige en geautomatiseerde websites die groei stimuleren met Belgische expertise.',

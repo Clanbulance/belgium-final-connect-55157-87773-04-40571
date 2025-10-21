@@ -1,8 +1,8 @@
 export const nav = {
   'nav.services': 'Diensten',
   'nav.pricing': 'Prijzen',
-  'nav.partnership': 'Partnership',
+  'nav.partnership': 'Over ons',
   'nav.contact': 'Contact',
   'nav.cta': 'Aan de slag',
-  'nav.subtitle': 'Officiële Belgische Otterino partner',
+  'nav.subtitle': 'Premium Weboplossingen',
 };

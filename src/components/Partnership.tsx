@@ -110,17 +110,11 @@ export const Partnership = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground">
-            {t('partnership.learn')}{" "}
-            <a 
-              href="https://otterino.com"
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="partnership-link"
-            >
-              www.otterino.com
-            </a>
-          </p>
+          {t('partnership.learn') && (
+            <p className="text-sm text-muted-foreground mb-6">
+              {t('partnership.learn')}
+            </p>
+          )}
         </div>
       </div>
     </section>
