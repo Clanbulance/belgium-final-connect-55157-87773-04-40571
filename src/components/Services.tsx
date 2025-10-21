@@ -7,40 +7,28 @@ export const Services = () => {
 
   const services = [
     {
-      icon: Zap,
+      icon: Target,
       titleKey: 'services.1.title',
       descKey: 'services.1.desc',
       outcomeKey: 'services.1.outcome'
     },
     {
-      icon: Target,
+      icon: Globe,
       titleKey: 'services.2.title',
       descKey: 'services.2.desc',
       outcomeKey: 'services.2.outcome'
     },
     {
-      icon: Cog,
+      icon: Zap,
       titleKey: 'services.3.title',
       descKey: 'services.3.desc',
       outcomeKey: 'services.3.outcome'
     },
     {
-      icon: TrendingUp,
+      icon: Cog,
       titleKey: 'services.4.title',
       descKey: 'services.4.desc',
       outcomeKey: 'services.4.outcome'
-    },
-    {
-      icon: Globe,
-      titleKey: 'services.5.title',
-      descKey: 'services.5.desc',
-      outcomeKey: 'services.5.outcome'
-    },
-    {
-      icon: Shield,
-      titleKey: 'services.6.title',
-      descKey: 'services.6.desc',
-      outcomeKey: 'services.6.outcome'
     }
   ];
 
@@ -56,7 +44,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-md-2 grid-lg-3 gap-8">
+        <div className="grid grid-md-2 gap-8 max-w-4xl mx-auto">
           {services.map((service) => (
             <Card key={service.titleKey} className="service-card group">
               <CardHeader>
