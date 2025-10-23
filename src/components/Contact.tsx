@@ -130,7 +130,7 @@ export const Contact = () => {
                       required
                     />
                   </div>
-                  <Button variant="hero" className="w-full" size="lg" type="submit" disabled={isSubmitting}>
+                  <Button variant="default" className="w-full" size="lg" type="submit" disabled={isSubmitting}>
                     {isSubmitting ? t('contact.form.sending') : t('contact.form.cta')}
                   </Button>
                 </form>
