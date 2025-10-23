@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
+    window.history.pushState(null, '', `#${id}`);
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
@@ -17,7 +18,10 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="nav-content">
           <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => {
+              window.history.pushState(null, '', '/');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             className="nav-logo"
           >
             <Building2 className="logo-icon" />

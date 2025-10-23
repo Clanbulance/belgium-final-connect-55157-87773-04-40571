@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const scrollToContact = () => {
   const element = document.getElementById("contact");
   if (element) {
+    window.history.pushState(null, '', '#contact');
     element.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 };
