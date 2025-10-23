@@ -10,6 +10,7 @@ export const contact = {
   'contact.form.placeholder.company': 'Your company name',
   'contact.form.placeholder.message': 'Tell us about your project...',
   'contact.form.cta': 'Send Message',
+  'contact.form.sending': 'Sending...',
   'contact.email.title': 'Email',
   'contact.email.response': 'Response within 24 hours',
   'contact.location.title': 'Location',

@@ -15,8 +15,9 @@ export const Contact = () => {
     company: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -25,18 +26,42 @@ export const Contact = () => {
       return;
     }
 
-    // Here you would typically send the data to your backend
-    toast.success("Message sent successfully!", {
-      description: "We'll get back to you within 24 hours."
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      toast.success("Message sent successfully!", {
+        description: "We'll get back to you within 24 hours."
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error("Failed to send message", {
+        description: "Please try again or contact us directly at info@rjdp.be"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -105,8 +130,8 @@ export const Contact = () => {
                       required
                     />
                   </div>
-                  <Button variant="hero" className="w-full" size="lg" type="submit">
-                    {t('contact.form.cta')}
+                  <Button variant="hero" className="w-full" size="lg" type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? t('contact.form.sending') : t('contact.form.cta')}
                   </Button>
                 </form>
               </CardContent>
