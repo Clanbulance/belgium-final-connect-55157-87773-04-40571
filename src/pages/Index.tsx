@@ -5,8 +5,23 @@ import { Pricing } from "@/components/Pricing";
 import { Partnership } from "@/components/Partnership";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    // Handle hash navigation on page load
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
