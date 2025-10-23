@@ -13,7 +13,7 @@ export const contact = {
   'contact.email.title': 'E-mail',
   'contact.email.response': 'Reactie binnen 24 uur',
   'contact.location.title': 'Locatie',
-  'contact.location.city': 'Brussel, België',
+  'contact.location.city': 'Buggenout - 9255',
   'contact.location.serving': 'Bedienen alle Belgische regio\'s',
   'contact.consult.title': 'Gratis Consultatie',
   'contact.consult.schedule': 'Plan een 30-minuten gesprek',
