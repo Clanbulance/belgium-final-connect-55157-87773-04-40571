@@ -103,9 +103,7 @@ export const Partnership = () => {
           </Card>
         </div>
 
-        <div className="mt-12 text-center">
-          {t("partnership.learn") && <p className="text-sm text-muted-foreground mb-6">{t("partnership.learn")}</p>}
-        </div>
+        <div className="mt-12 text-center"></div>
       </div>
     </section>
   );
