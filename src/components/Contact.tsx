@@ -84,7 +84,7 @@ export const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-md-2 gap-8">
             {/* Contact Form */}
             <Card>
               <CardContent className="pt-6">
