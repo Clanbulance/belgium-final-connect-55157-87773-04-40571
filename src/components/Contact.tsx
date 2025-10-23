@@ -4,86 +4,71 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { toast } from "sonner";
+import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-
-const contactFormSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(1, { message: "contact.form.error.nameRequired" })
-    .max(100, { message: "contact.form.error.nameTooLong" }),
-  email: z
-    .string()
-    .trim()
-    .email({ message: "contact.form.error.invalidEmail" })
-    .max(255, { message: "contact.form.error.emailTooLong" }),
-  company: z
-    .string()
-    .trim()
-    .max(100, { message: "contact.form.error.companyTooLong" })
-    .optional()
-    .or(z.literal("")),
-  message: z
-    .string()
-    .trim()
-    .min(1, { message: "contact.form.error.messageRequired" })
-    .max(1000, { message: "contact.form.error.messageTooLong" }),
-});
-
-type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export const Contact = () => {
   const { t } = useLanguage();
-
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      company: "",
-      message: "",
-    },
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit = async (data: ContactFormValues) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || "Failed to send message");
+        throw new Error(data.error || "Failed to send message");
       }
 
-      toast.success(t("contact.form.success.title"), {
-        description: t("contact.form.success.description"),
+      toast.success("Message sent successfully!", {
+        description: "We'll get back to you within 24 hours.",
       });
 
       // Reset form
-      form.reset();
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        message: "",
+      });
     } catch (error) {
       console.error("Form submission error:", error);
-      toast.error(t("contact.form.error.submitFailed"), {
-        description: t("contact.form.error.submitFailedDescription"),
+      toast.error("Failed to send message", {
+        description: "Please try again or contact us directly at info@rjdp.be",
       });
+    } finally {
+      setIsSubmitting(false);
     }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
@@ -95,113 +80,62 @@ export const Contact = () => {
             <p className="section-subtitle">{t("contact.subtitle")}</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-md-2 gap-8">
             {/* Contact Form */}
             <Card>
               <CardContent className="pt-6">
-                <Form {...form}>
-                  <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
-                    <FormField
-                      control={form.control}
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">{t("contact.form.name")} *</label>
+                    <Input
                       name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t("contact.form.name")} *</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder={t("contact.form.placeholder.name")}
-                              maxLength={100}
-                              disabled={form.formState.isSubmitting}
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage>
-                            {form.formState.errors.name?.message && 
-                              t(form.formState.errors.name.message)}
-                          </FormMessage>
-                        </FormItem>
-                      )}
+                      placeholder={t("contact.form.placeholder.name")}
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
                     />
-
-                    <FormField
-                      control={form.control}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">{t("contact.form.email")} *</label>
+                    <Input
                       name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t("contact.form.email")} *</FormLabel>
-                          <FormControl>
-                            <Input
-                              type="email"
-                              placeholder={t("contact.form.placeholder.email")}
-                              maxLength={255}
-                              disabled={form.formState.isSubmitting}
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage>
-                            {form.formState.errors.email?.message && 
-                              t(form.formState.errors.email.message)}
-                          </FormMessage>
-                        </FormItem>
-                      )}
+                      type="email"
+                      placeholder={t("contact.form.placeholder.email")}
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                     />
-
-                    <FormField
-                      control={form.control}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">{t("contact.form.company")}</label>
+                    <Input
                       name="company"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t("contact.form.company")}</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder={t("contact.form.placeholder.company")}
-                              maxLength={100}
-                              disabled={form.formState.isSubmitting}
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage>
-                            {form.formState.errors.company?.message && 
-                              t(form.formState.errors.company.message)}
-                          </FormMessage>
-                        </FormItem>
-                      )}
+                      placeholder={t("contact.form.placeholder.company")}
+                      value={formData.company}
+                      onChange={handleChange}
                     />
-
-                    <FormField
-                      control={form.control}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">{t("contact.form.message")} *</label>
+                    <Textarea
                       name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t("contact.form.message")} *</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder={t("contact.form.placeholder.message")}
-                              className="min-h-32"
-                              maxLength={1000}
-                              disabled={form.formState.isSubmitting}
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage>
-                            {form.formState.errors.message?.message && 
-                              t(form.formState.errors.message.message)}
-                          </FormMessage>
-                        </FormItem>
-                      )}
+                      placeholder={t("contact.form.placeholder.message")}
+                      className="min-h-32"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                     />
-
-                    <Button
-                      variant="default"
-                      className="w-full confButton"
-                      size="lg"
-                      type="submit"
-                      disabled={form.formState.isSubmitting}
-                    >
-                      {form.formState.isSubmitting ? t("contact.form.sending") : t("contact.form.cta")}
-                    </Button>
-                  </form>
-                </Form>
+                  </div>
+                  <Button
+                    variant="default"
+                    className="w-full confButton"
+                    size="lg"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? t("contact.form.sending") : t("contact.form.cta")}
+                  </Button>
+                </form>
               </CardContent>
             </Card>
 
