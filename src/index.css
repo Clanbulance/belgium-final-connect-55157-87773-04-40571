@@ -432,7 +432,15 @@ button {
 }
 
 .confButton {
-  background: black;
+  background: var(--primary);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.confButton:hover {
+  background: var(--primary-glow);
+  transform: translateY(-1px);
 }
 
 .value-card-minimal {
