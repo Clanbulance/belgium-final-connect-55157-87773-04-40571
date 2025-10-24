@@ -1,7 +1,6 @@
-import { Languages } from "lucide-react";
+import { Building2, Languages } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
-import logoRjdp from "@/assets/logo-rjdp.png";
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -25,14 +24,7 @@ export const Navigation = () => {
             }}
             className="nav-logo"
           >
-            <div className="relative w-10 h-10 flex-shrink-0">
-              <img 
-                src={logoRjdp} 
-                alt="RJDP Consulting Logo" 
-                className="w-full h-full object-contain brightness-0"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(180,100%,25%)] to-[hsl(180,85%,40%)] mix-blend-multiply"></div>
-            </div>
+            <Building2 className="logo-icon" />
             <div>
               <h2 className="logo-title">RJDP Consulting</h2>
               <p className="logo-subtitle">{t('nav.subtitle')}</p>
