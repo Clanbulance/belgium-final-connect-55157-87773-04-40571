@@ -134,237 +134,103 @@ export const Pricing = () => {
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <Card className="pricing-card">
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-3xl mb-4">Complete IT & Business Setup Solutions</CardTitle>
-                <CardDescription className="text-lg">
-                  From online presence to full infrastructure - we've got you covered
-                </CardDescription>
-              </CardHeader>
-              
-              <CardContent>
-                <div className="grid md:grid-cols-3 gap-4 auto-rows-min">
-                  {/* Online Presence - Large Featured */}
-                  <div className="md:col-span-2 md:row-span-2 p-6 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="p-3 rounded-lg bg-accent/20">
-                        <Globe className="h-6 w-6 text-accent" />
-                      </div>
-                      <h3 className="font-bold text-xl">Online Presence</h3>
+            {/* Circular Service Catalog */}
+            <div className="relative w-full aspect-square max-w-4xl mx-auto mb-12">
+              {/* Center Circle */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-background border-8 border-muted flex flex-col items-center justify-center z-10">
+                <h3 className="text-4xl font-bold">SERVICE</h3>
+                <p className="text-2xl text-muted-foreground tracking-widest">CATALOG</p>
+              </div>
+
+              {/* Connecting Lines Circle */}
+              <svg className="absolute inset-0 w-full h-full" style={{ transform: 'rotate(-90deg)' }}>
+                <circle cx="50%" cy="50%" r="42%" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="8 8" className="text-border opacity-40" />
+              </svg>
+
+              {/* Service Items */}
+              {[
+                { icon: Globe, title: "Online Presence", desc: "Professional websites, domains, SEO & Google Business optimization", color: "rgb(59, 130, 246)", angle: 0 },
+                { icon: Headphones, title: "IT Support", desc: "Software, hardware, and network support for smooth operations", color: "rgb(239, 68, 68)", angle: 51 },
+                { icon: Cloud, title: "Cloud Services", desc: "Secure cloud storage and computing solutions with remote access", color: "rgb(251, 146, 60)", angle: 102 },
+                { icon: Settings, title: "Cybersecurity", desc: "Protecting systems from threats, ensuring data security", color: "rgb(34, 197, 94)", angle: 153 },
+                { icon: Database, title: "Data & Backup", desc: "Automated backup solutions and data management systems", color: "rgb(20, 184, 166)", angle: 204 },
+                { icon: Server, title: "Infrastructure", desc: "Network setup, workstations, hardware sourcing & upgrades", color: "rgb(236, 72, 153)", angle: 255 },
+                { icon: Zap, title: "Automation", desc: "Process automation, CRM integration & custom solutions", color: "rgb(168, 85, 247)", angle: 306 },
+              ].map((service, idx) => {
+                const radius = 42;
+                const x = 50 + radius * Math.cos((service.angle * Math.PI) / 180);
+                const y = 50 + radius * Math.sin((service.angle * Math.PI) / 180);
+                const isLeft = x < 50;
+                
+                return (
+                  <div
+                    key={idx}
+                    className="absolute group"
+                    style={{
+                      left: `${x}%`,
+                      top: `${y}%`,
+                      transform: 'translate(-50%, -50%)',
+                    }}
+                  >
+                    {/* Connection Line */}
+                    <div
+                      className="absolute w-20 h-0.5 origin-left"
+                      style={{
+                        backgroundColor: service.color,
+                        left: isLeft ? 'auto' : '50%',
+                        right: isLeft ? '50%' : 'auto',
+                        top: '50%',
+                        transform: `rotate(${service.angle + (isLeft ? 180 : 0)}deg) translateY(-50%)`,
+                        opacity: 0.4,
+                      }}
+                    />
+                    
+                    {/* Dot on line */}
+                    <div
+                      className="absolute w-3 h-3 rounded-full"
+                      style={{
+                        backgroundColor: service.color,
+                        left: isLeft ? '-2.5rem' : '2.5rem',
+                        top: '50%',
+                        transform: 'translate(-50%, -50%)',
+                      }}
+                    />
+
+                    {/* Icon Circle */}
+                    <div
+                      className="w-20 h-20 rounded-full flex items-center justify-center border-4 bg-background transition-transform group-hover:scale-110 relative z-10"
+                      style={{ borderColor: service.color }}
+                    >
+                      <service.icon className="w-10 h-10" style={{ color: service.color }} />
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Professional Website</div>
-                          <div className="text-xs text-muted-foreground">Up to 5 pages</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Domain & Hosting</div>
-                          <div className="text-xs text-muted-foreground">EU-based</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Google Business</div>
-                          <div className="text-xs text-muted-foreground">Profile optimization</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">SEO Setup</div>
-                          <div className="text-xs text-muted-foreground">Search optimization</div>
-                        </div>
-                      </div>
+
+                    {/* Text Content */}
+                    <div
+                      className={`absolute top-1/2 -translate-y-1/2 w-56 ${
+                        isLeft ? 'right-24 text-right' : 'left-24 text-left'
+                      }`}
+                    >
+                      <h4 className="font-bold text-lg mb-1" style={{ color: service.color }}>
+                        {service.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground italic leading-snug">
+                        {service.desc}
+                      </p>
                     </div>
                   </div>
+                );
+              })}
+            </div>
 
-                  {/* Email & Communication */}
-                  <div className="p-5 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="p-2 rounded-lg bg-primary/20">
-                        <Mail className="h-5 w-5 text-primary" />
-                      </div>
-                      <h3 className="font-bold text-lg">Email</h3>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Business Email</div>
-                          <div className="text-xs text-muted-foreground">@yourcompany.be</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Migration</div>
-                          <div className="text-xs text-muted-foreground">Transfer accounts</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Storage & Cloud */}
-                  <div className="p-5 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="p-2 rounded-lg bg-primary/20">
-                        <Cloud className="h-5 w-5 text-primary" />
-                      </div>
-                      <h3 className="font-bold text-lg">Storage</h3>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Cloud Storage</div>
-                          <div className="text-xs text-muted-foreground">M365 / Google</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">NAS Storage</div>
-                          <div className="text-xs text-muted-foreground">Office network</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Backup</div>
-                          <div className="text-xs text-muted-foreground">Automated</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* IT Infrastructure - Medium Featured */}
-                  <div className="md:col-span-2 p-5 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="p-2 rounded-lg bg-accent/20">
-                        <Server className="h-5 w-5 text-accent" />
-                      </div>
-                      <h3 className="font-bold text-lg">IT Infrastructure</h3>
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Workstation Setup</div>
-                          <div className="text-xs text-muted-foreground">1-3 employees</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Network Setup</div>
-                          <div className="text-xs text-muted-foreground">Router, Wi-Fi, VPN</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Hardware Sourcing</div>
-                          <div className="text-xs text-muted-foreground">Professional equipment</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Network Upgrades</div>
-                          <div className="text-xs text-muted-foreground">Optimization</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Automation & Tools */}
-                  <div className="p-5 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="p-2 rounded-lg bg-accent/20">
-                        <Zap className="h-5 w-5 text-accent" />
-                      </div>
-                      <h3 className="font-bold text-lg">Automation</h3>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Process Automation</div>
-                          <div className="text-xs text-muted-foreground">Workflow optimization</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">CRM Integration</div>
-                          <div className="text-xs text-muted-foreground">Project management</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Custom Projects</div>
-                          <div className="text-xs text-muted-foreground">Tailored solutions</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Support & Training - Wide */}
-                  <div className="md:col-span-3 p-5 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="p-2 rounded-lg bg-primary/20">
-                        <Headphones className="h-5 w-5 text-primary" />
-                      </div>
-                      <h3 className="font-bold text-lg">Support & Training</h3>
-                    </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Priority Support</div>
-                          <div className="text-xs text-muted-foreground">30-60 days included</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Remote Support</div>
-                          <div className="text-xs text-muted-foreground">Troubleshooting</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Team Training</div>
-                          <div className="text-xs text-muted-foreground">Comprehensive sessions</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Handover Training</div>
-                          <div className="text-xs text-muted-foreground">Initial system training</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-border pt-6">
-                  <p className="text-center text-sm text-muted-foreground mb-6">
-                    <strong>À La Carte Services:</strong> All services available individually • Custom pricing based on your needs
-                  </p>
-                  <Button variant="hero" size="lg" className="w-full" onClick={() => handlePricingClick("IT Services")}>
-                    {t("pricing.cta")} - Request Custom Quote
-                  </Button>
-                </div>
+            {/* CTA Card */}
+            <Card className="pricing-card max-w-3xl mx-auto">
+              <CardContent className="pt-6">
+                <p className="text-center text-sm text-muted-foreground mb-6">
+                  <strong>À La Carte Services:</strong> All services available individually • Custom pricing based on your needs
+                </p>
+                <Button variant="hero" size="lg" className="w-full" onClick={() => handlePricingClick("IT Services")}>
+                  {t("pricing.cta")} - Request Custom Quote
+                </Button>
               </CardContent>
             </Card>
           </div>
