@@ -143,38 +143,6 @@ export const Pricing = () => {
               </CardHeader>
               
               <CardContent>
-                <div className="grid md:grid-cols-3 gap-8 mb-12">
-                  {/* Digital Starter */}
-                  <div className="text-center">
-                    <div className="mb-4">
-                      <div className="text-2xl font-bold text-primary mb-1">{t("pricing.it1.name")}</div>
-                      <div className="text-sm text-muted-foreground mb-2">{t("pricing.it1.delivery")}</div>
-                      <div className="text-lg font-semibold text-primary">{t("pricing.it1.price")}</div>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-4">{t("pricing.it1.desc")}</p>
-                  </div>
-
-                  {/* Business Launch */}
-                  <div className="text-center border-x border-border px-4">
-                    <div className="mb-4">
-                      <div className="text-2xl font-bold text-primary mb-1">{t("pricing.it2.name")}</div>
-                      <div className="text-sm text-muted-foreground mb-2">{t("pricing.it2.delivery")}</div>
-                      <div className="text-lg font-semibold text-primary">{t("pricing.it2.price")}</div>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-4">{t("pricing.it2.desc")}</p>
-                  </div>
-
-                  {/* Complete Setup */}
-                  <div className="text-center">
-                    <div className="mb-4">
-                      <div className="text-2xl font-bold text-primary mb-1">{t("pricing.it3.name")}</div>
-                      <div className="text-sm text-muted-foreground mb-2">{t("pricing.it3.delivery")}</div>
-                      <div className="text-lg font-semibold text-primary">{t("pricing.it3.price")}</div>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-4">{t("pricing.it3.desc")}</p>
-                  </div>
-                </div>
-
                 {/* Service Categories */}
                 <div className="space-y-6 mb-8">
                   {/* Online Presence */}
