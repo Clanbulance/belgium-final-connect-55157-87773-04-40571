@@ -6,7 +6,6 @@ import { Partnership } from "@/components/Partnership";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { useEffect } from "react";
-
 const Index = () => {
   useEffect(() => {
     // Handle hash navigation on page load
@@ -16,23 +15,22 @@ const Index = () => {
       const element = document.getElementById(id);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }, 100);
       }
     }
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
-      <Hero />
+      <Hero className="py-0 my-0 px-0" />
       <Services />
       <Pricing />
       <Partnership />
       <Contact />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
