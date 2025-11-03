@@ -143,70 +143,173 @@ export const Pricing = () => {
               </CardHeader>
               
               <CardContent>
-                {/* Service Categories */}
-                <div className="space-y-6 mb-8">
-                  {/* Online Presence */}
-                  <div className="border-t border-border pt-6">
-                    <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                      <Check className="text-accent h-5 w-5" />
-                      Online Presence & Digital Foundation
-                    </h4>
-                    <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground ml-7">
-                      <li>• Professional website (up to 5 pages)</li>
-                      <li>• Business email setup (@yourcompany.be)</li>
-                      <li>• Domain registration & EU hosting</li>
-                      <li>• Google Business Profile optimization</li>
-                      <li>• Basic SEO configuration</li>
-                      <li>• Initial handover training</li>
-                    </ul>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Professional Website</div>
+                      <div className="text-xs text-muted-foreground">Up to 5 pages with mobile optimization</div>
+                    </div>
                   </div>
 
-                  {/* IT Infrastructure */}
-                  <div className="border-t border-border pt-6">
-                    <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                      <Check className="text-accent h-5 w-5" />
-                      IT Infrastructure & Workstations
-                    </h4>
-                    <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground ml-7">
-                      <li>• Workstation setup (1-3 employees)</li>
-                      <li>• Network setup (router, Wi-Fi, VPN)</li>
-                      <li>• Office network with NAS storage</li>
-                      <li>• Hardware sourcing & configuration</li>
-                      <li>• Cloud storage setup (Google/Microsoft 365)</li>
-                      <li>• Email migration from existing accounts</li>
-                    </ul>
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Business Email Setup</div>
+                      <div className="text-xs text-muted-foreground">Professional @yourcompany.be addresses</div>
+                    </div>
                   </div>
 
-                  {/* Automation & Integration */}
-                  <div className="border-t border-border pt-6">
-                    <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                      <Check className="text-accent h-5 w-5" />
-                      Automation & Business Tools
-                    </h4>
-                    <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground ml-7">
-                      <li>• Data backup automation</li>
-                      <li>• Business process automation setup</li>
-                      <li>• CRM or project management integration</li>
-                      <li>• Custom automation projects</li>
-                      <li>• Team training sessions</li>
-                      <li>• Network upgrades & optimization</li>
-                    </ul>
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Domain & Hosting</div>
+                      <div className="text-xs text-muted-foreground">EU-based registration and hosting</div>
+                    </div>
                   </div>
 
-                  {/* Support & Maintenance */}
-                  <div className="border-t border-border pt-6 pb-2">
-                    <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                      <Check className="text-accent h-5 w-5" />
-                      Support & Ongoing Services
-                    </h4>
-                    <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground ml-7">
-                      <li>• Remote troubleshooting sessions</li>
-                      <li>• Priority support (30-60 days included)</li>
-                      <li>• Additional workstation setup</li>
-                      <li>• Email platform migration</li>
-                      <li>• On-demand technical assistance</li>
-                      <li>• Custom service requests</li>
-                    </ul>
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Google Business Profile</div>
+                      <div className="text-xs text-muted-foreground">Optimization for local search</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">SEO Configuration</div>
+                      <div className="text-xs text-muted-foreground">Basic search engine optimization</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Workstation Setup</div>
+                      <div className="text-xs text-muted-foreground">Hardware & software for 1-3 employees</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Network Setup</div>
+                      <div className="text-xs text-muted-foreground">Router, Wi-Fi, VPN configuration</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">NAS Storage</div>
+                      <div className="text-xs text-muted-foreground">Office network with secure storage</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Hardware Sourcing</div>
+                      <div className="text-xs text-muted-foreground">Professional equipment selection</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Cloud Storage</div>
+                      <div className="text-xs text-muted-foreground">Google/Microsoft 365 setup</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Email Migration</div>
+                      <div className="text-xs text-muted-foreground">Transfer from existing accounts</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Data Backup</div>
+                      <div className="text-xs text-muted-foreground">Automated backup solutions</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Process Automation</div>
+                      <div className="text-xs text-muted-foreground">Business workflow optimization</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">CRM Integration</div>
+                      <div className="text-xs text-muted-foreground">Project management tools setup</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Custom Automation</div>
+                      <div className="text-xs text-muted-foreground">Tailored automation projects</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Team Training</div>
+                      <div className="text-xs text-muted-foreground">Comprehensive training sessions</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Network Upgrades</div>
+                      <div className="text-xs text-muted-foreground">Performance optimization</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Remote Support</div>
+                      <div className="text-xs text-muted-foreground">Troubleshooting sessions</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Priority Support</div>
+                      <div className="text-xs text-muted-foreground">30-60 days included support</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Handover Training</div>
+                      <div className="text-xs text-muted-foreground">Initial system training</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
+                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-sm mb-1">Custom Services</div>
+                      <div className="text-xs text-muted-foreground">On-demand technical assistance</div>
+                    </div>
                   </div>
                 </div>
 
