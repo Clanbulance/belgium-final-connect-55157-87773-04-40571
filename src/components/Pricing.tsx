@@ -199,7 +199,7 @@ export const Pricing = () => {
                   <ul className="space-y-3">
                     <li className="pricing-feature">
                       <Check className="text-accent h-5 w-5 flex-shrink-0" />
-                      <span className="text-sm">Workstation Setup (1-3 employees)</span>
+                      <span className="text-sm">Workstation Setup</span>
                     </li>
                     <li className="pricing-feature">
                       <Check className="text-accent h-5 w-5 flex-shrink-0" />
