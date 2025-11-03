@@ -133,168 +133,121 @@ export const Pricing = () => {
             <p className="text-sm text-muted-foreground italic">{t("pricing.it.note")}</p>
           </div>
 
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Card className="pricing-card">
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-3xl mb-4">IT Services & Business Setup</CardTitle>
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-3xl mb-4">Complete IT & Business Setup Solutions</CardTitle>
                 <CardDescription className="text-lg">
-                  Comprehensive packages tailored to your business needs
+                  From online presence to full infrastructure - we've got you covered
                 </CardDescription>
               </CardHeader>
               
-              <CardContent className="space-y-8">
-                {/* Digital Starter Pack */}
-                <div className="border-b border-border pb-8 last:border-0">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{t("pricing.it1.name")}</h3>
-                      <p className="text-muted-foreground text-sm">{t("pricing.it1.desc")}</p>
+              <CardContent>
+                <div className="grid md:grid-cols-3 gap-8 mb-12">
+                  {/* Digital Starter */}
+                  <div className="text-center">
+                    <div className="mb-4">
+                      <div className="text-2xl font-bold text-primary mb-1">{t("pricing.it1.name")}</div>
+                      <div className="text-sm text-muted-foreground mb-2">{t("pricing.it1.delivery")}</div>
+                      <div className="text-lg font-semibold text-primary">{t("pricing.it1.price")}</div>
                     </div>
-                    <div className="text-right shrink-0">
-                      <div className="text-lg font-bold text-primary">{t("pricing.it1.price")}</div>
-                      <div className="text-sm text-muted-foreground">{t("pricing.delivery")}: {t("pricing.it1.delivery")}</div>
-                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">{t("pricing.it1.desc")}</p>
                   </div>
-                  <ul className="grid md:grid-cols-2 gap-2 text-sm">
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it1.f1")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it1.f2")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it1.f3")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it1.f4")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it1.f5")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it1.f6")}</span>
-                    </li>
-                  </ul>
+
+                  {/* Business Launch */}
+                  <div className="text-center border-x border-border px-4">
+                    <div className="mb-4">
+                      <div className="text-2xl font-bold text-primary mb-1">{t("pricing.it2.name")}</div>
+                      <div className="text-sm text-muted-foreground mb-2">{t("pricing.it2.delivery")}</div>
+                      <div className="text-lg font-semibold text-primary">{t("pricing.it2.price")}</div>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">{t("pricing.it2.desc")}</p>
+                  </div>
+
+                  {/* Complete Setup */}
+                  <div className="text-center">
+                    <div className="mb-4">
+                      <div className="text-2xl font-bold text-primary mb-1">{t("pricing.it3.name")}</div>
+                      <div className="text-sm text-muted-foreground mb-2">{t("pricing.it3.delivery")}</div>
+                      <div className="text-lg font-semibold text-primary">{t("pricing.it3.price")}</div>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">{t("pricing.it3.desc")}</p>
+                  </div>
                 </div>
 
-                {/* Business Launch */}
-                <div className="border-b border-border pb-8 last:border-0">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{t("pricing.it2.name")}</h3>
-                      <p className="text-muted-foreground text-sm">{t("pricing.it2.desc")}</p>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <div className="text-lg font-bold text-primary">{t("pricing.it2.price")}</div>
-                      <div className="text-sm text-muted-foreground">{t("pricing.delivery")}: {t("pricing.it2.delivery")}</div>
-                    </div>
+                {/* Service Categories */}
+                <div className="space-y-6 mb-8">
+                  {/* Online Presence */}
+                  <div className="border-t border-border pt-6">
+                    <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                      <Check className="text-accent h-5 w-5" />
+                      Online Presence & Digital Foundation
+                    </h4>
+                    <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground ml-7">
+                      <li>• Professional website (up to 5 pages)</li>
+                      <li>• Business email setup (@yourcompany.be)</li>
+                      <li>• Domain registration & EU hosting</li>
+                      <li>• Google Business Profile optimization</li>
+                      <li>• Basic SEO configuration</li>
+                      <li>• Initial handover training</li>
+                    </ul>
                   </div>
-                  <ul className="grid md:grid-cols-2 gap-2 text-sm">
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it2.f1")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it2.f2")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it2.f3")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it2.f4")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it2.f5")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it2.f6")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it2.f7")}</span>
-                    </li>
-                  </ul>
+
+                  {/* IT Infrastructure */}
+                  <div className="border-t border-border pt-6">
+                    <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                      <Check className="text-accent h-5 w-5" />
+                      IT Infrastructure & Workstations
+                    </h4>
+                    <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground ml-7">
+                      <li>• Workstation setup (1-3 employees)</li>
+                      <li>• Network setup (router, Wi-Fi, VPN)</li>
+                      <li>• Office network with NAS storage</li>
+                      <li>• Hardware sourcing & configuration</li>
+                      <li>• Cloud storage setup (Google/Microsoft 365)</li>
+                      <li>• Email migration from existing accounts</li>
+                    </ul>
+                  </div>
+
+                  {/* Automation & Integration */}
+                  <div className="border-t border-border pt-6">
+                    <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                      <Check className="text-accent h-5 w-5" />
+                      Automation & Business Tools
+                    </h4>
+                    <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground ml-7">
+                      <li>• Data backup automation</li>
+                      <li>• Business process automation setup</li>
+                      <li>• CRM or project management integration</li>
+                      <li>• Custom automation projects</li>
+                      <li>• Team training sessions</li>
+                      <li>• Network upgrades & optimization</li>
+                    </ul>
+                  </div>
+
+                  {/* Support & Maintenance */}
+                  <div className="border-t border-border pt-6 pb-2">
+                    <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                      <Check className="text-accent h-5 w-5" />
+                      Support & Ongoing Services
+                    </h4>
+                    <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground ml-7">
+                      <li>• Remote troubleshooting sessions</li>
+                      <li>• Priority support (30-60 days included)</li>
+                      <li>• Additional workstation setup</li>
+                      <li>• Email platform migration</li>
+                      <li>• On-demand technical assistance</li>
+                      <li>• Custom service requests</li>
+                    </ul>
+                  </div>
                 </div>
 
-                {/* Complete IT Setup */}
-                <div className="border-b border-border pb-8 last:border-0">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{t("pricing.it3.name")}</h3>
-                      <p className="text-muted-foreground text-sm">{t("pricing.it3.desc")}</p>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <div className="text-lg font-bold text-primary">{t("pricing.it3.price")}</div>
-                      <div className="text-sm text-muted-foreground">{t("pricing.delivery")}: {t("pricing.it3.delivery")}</div>
-                    </div>
-                  </div>
-                  <ul className="grid md:grid-cols-2 gap-2 text-sm">
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it3.f1")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it3.f2")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it3.f3")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it3.f4")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it3.f5")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it3.f6")}</span>
-                    </li>
-                    <li className="pricing-feature">
-                      <Check style={{ width: "1rem", height: "1rem", flexShrink: 0 }} className="text-accent" />
-                      <span>{t("pricing.it3.f7")}</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* À La Carte Services */}
-                <div className="pb-2">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{t("pricing.alacarte.name")}</h3>
-                      <p className="text-muted-foreground text-sm">{t("pricing.alacarte.desc")}</p>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <div className="text-lg font-bold text-primary">{t("pricing.alacarte.price")}</div>
-                    </div>
-                  </div>
-                  <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground mb-6">
-                    <li>• {t("pricing.alacarte.f1")}</li>
-                    <li>• {t("pricing.alacarte.f2")}</li>
-                    <li>• {t("pricing.alacarte.f3")}</li>
-                    <li>• {t("pricing.alacarte.f4")}</li>
-                    <li>• {t("pricing.alacarte.f5")}</li>
-                    <li>• {t("pricing.alacarte.f6")}</li>
-                  </ul>
-                </div>
-
-                <div className="pt-4">
+                <div className="border-t border-border pt-6">
+                  <p className="text-center text-sm text-muted-foreground mb-6">
+                    <strong>À La Carte Services:</strong> All services available individually • Custom pricing based on your needs
+                  </p>
                   <Button variant="hero" size="lg" className="w-full" onClick={() => handlePricingClick("IT Services")}>
-                    {t("pricing.cta")}
+                    {t("pricing.cta")} - Request Custom Quote
                   </Button>
                 </div>
               </CardContent>
