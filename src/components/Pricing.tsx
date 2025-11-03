@@ -134,237 +134,264 @@ export const Pricing = () => {
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <Card className="pricing-card">
+            {/* Header Card */}
+            <Card className="pricing-card mb-6">
               <CardHeader className="text-center pb-6">
                 <CardTitle className="text-3xl mb-4">Complete IT & Business Setup Solutions</CardTitle>
                 <CardDescription className="text-lg">
                   From online presence to full infrastructure - we've got you covered
                 </CardDescription>
               </CardHeader>
-              
-              <CardContent>
-                <div className="grid md:grid-cols-3 gap-4 auto-rows-min">
-                  {/* Online Presence - Large Featured */}
-                  <div className="md:col-span-2 md:row-span-2 p-6 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="p-3 rounded-lg bg-accent/20">
-                        <Globe className="h-6 w-6 text-accent" />
-                      </div>
-                      <h3 className="font-bold text-xl">Online Presence</h3>
+            </Card>
+
+            {/* Service Cards Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+              {/* Online Presence Card */}
+              <Card className="pricing-card lg:col-span-2 bg-gradient-to-br from-accent/5 to-accent/10 border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-3 rounded-lg bg-accent/20">
+                      <Globe className="h-6 w-6 text-accent" />
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Professional Website</div>
-                          <div className="text-xs text-muted-foreground">Up to 5 pages</div>
-                        </div>
+                    <CardTitle className="text-xl">Online Presence</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Professional Website</div>
+                        <div className="text-xs text-muted-foreground">Up to 5 pages</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Domain & Hosting</div>
-                          <div className="text-xs text-muted-foreground">EU-based</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Domain & Hosting</div>
+                        <div className="text-xs text-muted-foreground">EU-based</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Google Business</div>
-                          <div className="text-xs text-muted-foreground">Profile optimization</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Google Business</div>
+                        <div className="text-xs text-muted-foreground">Profile optimization</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">SEO Setup</div>
-                          <div className="text-xs text-muted-foreground">Search optimization</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">SEO Setup</div>
+                        <div className="text-xs text-muted-foreground">Search optimization</div>
                       </div>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
 
-                  {/* Email & Communication */}
-                  <div className="p-5 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="p-2 rounded-lg bg-primary/20">
-                        <Mail className="h-5 w-5 text-primary" />
-                      </div>
-                      <h3 className="font-bold text-lg">Email</h3>
+              {/* Email Card */}
+              <Card className="pricing-card bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-primary/20">
+                      <Mail className="h-5 w-5 text-primary" />
                     </div>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Business Email</div>
-                          <div className="text-xs text-muted-foreground">@yourcompany.be</div>
-                        </div>
+                    <CardTitle className="text-lg">Email</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-2">
+                      <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Business Email</div>
+                        <div className="text-xs text-muted-foreground">@yourcompany.be</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Migration</div>
-                          <div className="text-xs text-muted-foreground">Transfer accounts</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Migration</div>
+                        <div className="text-xs text-muted-foreground">Transfer accounts</div>
                       </div>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
 
-                  {/* Storage & Cloud */}
-                  <div className="p-5 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="p-2 rounded-lg bg-primary/20">
-                        <Cloud className="h-5 w-5 text-primary" />
-                      </div>
-                      <h3 className="font-bold text-lg">Storage</h3>
+              {/* Storage Card */}
+              <Card className="pricing-card bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-primary/20">
+                      <Cloud className="h-5 w-5 text-primary" />
                     </div>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Cloud Storage</div>
-                          <div className="text-xs text-muted-foreground">M365 / Google</div>
-                        </div>
+                    <CardTitle className="text-lg">Storage</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-2">
+                      <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Cloud Storage</div>
+                        <div className="text-xs text-muted-foreground">M365 / Google</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">NAS Storage</div>
-                          <div className="text-xs text-muted-foreground">Office network</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">NAS Storage</div>
+                        <div className="text-xs text-muted-foreground">Office network</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Backup</div>
-                          <div className="text-xs text-muted-foreground">Automated</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Backup</div>
+                        <div className="text-xs text-muted-foreground">Automated</div>
                       </div>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
 
-                  {/* IT Infrastructure - Medium Featured */}
-                  <div className="md:col-span-2 p-5 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="p-2 rounded-lg bg-accent/20">
-                        <Server className="h-5 w-5 text-accent" />
-                      </div>
-                      <h3 className="font-bold text-lg">IT Infrastructure</h3>
+              {/* IT Infrastructure Card */}
+              <Card className="pricing-card lg:col-span-2 bg-gradient-to-br from-accent/5 to-accent/10 border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-accent/20">
+                      <Server className="h-5 w-5 text-accent" />
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Workstation Setup</div>
-                          <div className="text-xs text-muted-foreground">1-3 employees</div>
-                        </div>
+                    <CardTitle className="text-lg">IT Infrastructure</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Workstation Setup</div>
+                        <div className="text-xs text-muted-foreground">1-3 employees</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Network Setup</div>
-                          <div className="text-xs text-muted-foreground">Router, Wi-Fi, VPN</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Network Setup</div>
+                        <div className="text-xs text-muted-foreground">Router, Wi-Fi, VPN</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Hardware Sourcing</div>
-                          <div className="text-xs text-muted-foreground">Professional equipment</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Hardware Sourcing</div>
+                        <div className="text-xs text-muted-foreground">Professional equipment</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Network Upgrades</div>
-                          <div className="text-xs text-muted-foreground">Optimization</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Network Upgrades</div>
+                        <div className="text-xs text-muted-foreground">Optimization</div>
                       </div>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
 
-                  {/* Automation & Tools */}
-                  <div className="p-5 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="p-2 rounded-lg bg-accent/20">
-                        <Zap className="h-5 w-5 text-accent" />
-                      </div>
-                      <h3 className="font-bold text-lg">Automation</h3>
+              {/* Automation Card */}
+              <Card className="pricing-card bg-gradient-to-br from-accent/5 to-accent/10 border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-accent/20">
+                      <Zap className="h-5 w-5 text-accent" />
                     </div>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Process Automation</div>
-                          <div className="text-xs text-muted-foreground">Workflow optimization</div>
-                        </div>
+                    <CardTitle className="text-lg">Automation</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Process Automation</div>
+                        <div className="text-xs text-muted-foreground">Workflow optimization</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">CRM Integration</div>
-                          <div className="text-xs text-muted-foreground">Project management</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">CRM Integration</div>
+                        <div className="text-xs text-muted-foreground">Project management</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Custom Projects</div>
-                          <div className="text-xs text-muted-foreground">Tailored solutions</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-accent h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Custom Projects</div>
+                        <div className="text-xs text-muted-foreground">Tailored solutions</div>
                       </div>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
 
-                  {/* Support & Training - Wide */}
-                  <div className="md:col-span-3 p-5 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="p-2 rounded-lg bg-primary/20">
-                        <Headphones className="h-5 w-5 text-primary" />
-                      </div>
-                      <h3 className="font-bold text-lg">Support & Training</h3>
+              {/* Support & Training Card */}
+              <Card className="pricing-card lg:col-span-3 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-primary/20">
+                      <Headphones className="h-5 w-5 text-primary" />
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Priority Support</div>
-                          <div className="text-xs text-muted-foreground">30-60 days included</div>
-                        </div>
+                    <CardTitle className="text-lg">Support & Training</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="flex items-start gap-2">
+                      <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Priority Support</div>
+                        <div className="text-xs text-muted-foreground">30-60 days included</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Remote Support</div>
-                          <div className="text-xs text-muted-foreground">Troubleshooting</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Remote Support</div>
+                        <div className="text-xs text-muted-foreground">Troubleshooting</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Team Training</div>
-                          <div className="text-xs text-muted-foreground">Comprehensive sessions</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Team Training</div>
+                        <div className="text-xs text-muted-foreground">Comprehensive sessions</div>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <div className="font-medium">Handover Training</div>
-                          <div className="text-xs text-muted-foreground">Initial system training</div>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="text-primary h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <div className="font-medium">Handover Training</div>
+                        <div className="text-xs text-muted-foreground">Initial system training</div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </CardContent>
+              </Card>
+            </div>
 
-                <div className="border-t border-border pt-6">
-                  <p className="text-center text-sm text-muted-foreground mb-6">
-                    <strong>À La Carte Services:</strong> All services available individually • Custom pricing based on your needs
-                  </p>
-                  <Button variant="hero" size="lg" className="w-full" onClick={() => handlePricingClick("IT Services")}>
-                    {t("pricing.cta")} - Request Custom Quote
-                  </Button>
-                </div>
+            {/* CTA Card */}
+            <Card className="pricing-card">
+              <CardContent className="pt-6">
+                <p className="text-center text-sm text-muted-foreground mb-6">
+                  <strong>À La Carte Services:</strong> All services available individually • Custom pricing based on your needs
+                </p>
+                <Button variant="hero" size="lg" className="w-full" onClick={() => handlePricingClick("IT Services")}>
+                  {t("pricing.cta")} - Request Custom Quote
+                </Button>
               </CardContent>
             </Card>
           </div>
