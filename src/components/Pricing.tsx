@@ -139,7 +139,7 @@ export const Pricing = () => {
               <p className="text-muted-foreground">From online presence to full infrastructure - we've got you covered</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            <div className="grid grid-md-2 grid-lg-3 gap-8 mb-8">
               {/* Online Presence Card */}
               <Card className="pricing-card">
                 <CardHeader className="text-center pb-4">
