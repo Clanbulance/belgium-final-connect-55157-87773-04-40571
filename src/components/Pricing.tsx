@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, Globe, Server, Zap, Headphones, Mail, Database, Wifi, HardDrive, Cloud, Settings, Users } from "lucide-react";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -143,172 +143,202 @@ export const Pricing = () => {
               </CardHeader>
               
               <CardContent>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Professional Website</div>
-                      <div className="text-xs text-muted-foreground">Up to 5 pages with mobile optimization</div>
+                {/* Online Presence */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-4 pb-2 border-b border-accent/20">
+                    <Globe className="h-5 w-5 text-accent" />
+                    <h3 className="font-semibold text-lg">Online Presence</h3>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Professional Website</div>
+                        <div className="text-xs text-muted-foreground">Up to 5 pages with mobile optimization</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Domain & Hosting</div>
+                        <div className="text-xs text-muted-foreground">EU-based registration and hosting</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Google Business Profile</div>
+                        <div className="text-xs text-muted-foreground">Local search optimization</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">SEO Configuration</div>
+                        <div className="text-xs text-muted-foreground">Search engine optimization</div>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Business Email Setup</div>
-                      <div className="text-xs text-muted-foreground">Professional @yourcompany.be addresses</div>
+                {/* Email & Communication */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-4 pb-2 border-b border-primary/20">
+                    <Mail className="h-5 w-5 text-primary" />
+                    <h3 className="font-semibold text-lg">Email & Communication</h3>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
+                      <Check className="text-primary h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Business Email Setup</div>
+                        <div className="text-xs text-muted-foreground">Professional @yourcompany.be</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
+                      <Check className="text-primary h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Email Migration</div>
+                        <div className="text-xs text-muted-foreground">Transfer from existing accounts</div>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Domain & Hosting</div>
-                      <div className="text-xs text-muted-foreground">EU-based registration and hosting</div>
+                {/* IT Infrastructure */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-4 pb-2 border-b border-accent/20">
+                    <Server className="h-5 w-5 text-accent" />
+                    <h3 className="font-semibold text-lg">IT Infrastructure</h3>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Workstation Setup</div>
+                        <div className="text-xs text-muted-foreground">1-3 employee workstations</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Hardware Sourcing</div>
+                        <div className="text-xs text-muted-foreground">Professional equipment selection</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Network Setup</div>
+                        <div className="text-xs text-muted-foreground">Router, Wi-Fi, VPN</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Network Upgrades</div>
+                        <div className="text-xs text-muted-foreground">Performance optimization</div>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Google Business Profile</div>
-                      <div className="text-xs text-muted-foreground">Optimization for local search</div>
+                {/* Storage & Cloud */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-4 pb-2 border-b border-primary/20">
+                    <Cloud className="h-5 w-5 text-primary" />
+                    <h3 className="font-semibold text-lg">Storage & Cloud</h3>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
+                      <Check className="text-primary h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Cloud Storage</div>
+                        <div className="text-xs text-muted-foreground">Google/Microsoft 365 setup</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
+                      <Check className="text-primary h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">NAS Storage</div>
+                        <div className="text-xs text-muted-foreground">Office network storage</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
+                      <Check className="text-primary h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Data Backup</div>
+                        <div className="text-xs text-muted-foreground">Automated backup solutions</div>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">SEO Configuration</div>
-                      <div className="text-xs text-muted-foreground">Basic search engine optimization</div>
+                {/* Automation & Integration */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-4 pb-2 border-b border-accent/20">
+                    <Zap className="h-5 w-5 text-accent" />
+                    <h3 className="font-semibold text-lg">Automation & Tools</h3>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Process Automation</div>
+                        <div className="text-xs text-muted-foreground">Workflow optimization</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">CRM Integration</div>
+                        <div className="text-xs text-muted-foreground">Project management tools</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                      <Check className="text-accent h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Custom Automation</div>
+                        <div className="text-xs text-muted-foreground">Tailored automation projects</div>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Workstation Setup</div>
-                      <div className="text-xs text-muted-foreground">Hardware & software for 1-3 employees</div>
-                    </div>
+                {/* Support & Training */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-4 pb-2 border-b border-primary/20">
+                    <Headphones className="h-5 w-5 text-primary" />
+                    <h3 className="font-semibold text-lg">Support & Training</h3>
                   </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Network Setup</div>
-                      <div className="text-xs text-muted-foreground">Router, Wi-Fi, VPN configuration</div>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
+                      <Check className="text-primary h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Priority Support</div>
+                        <div className="text-xs text-muted-foreground">30-60 days included</div>
+                      </div>
                     </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">NAS Storage</div>
-                      <div className="text-xs text-muted-foreground">Office network with secure storage</div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
+                      <Check className="text-primary h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Remote Support</div>
+                        <div className="text-xs text-muted-foreground">Troubleshooting sessions</div>
+                      </div>
                     </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Hardware Sourcing</div>
-                      <div className="text-xs text-muted-foreground">Professional equipment selection</div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
+                      <Check className="text-primary h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Team Training</div>
+                        <div className="text-xs text-muted-foreground">Comprehensive sessions</div>
+                      </div>
                     </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Cloud Storage</div>
-                      <div className="text-xs text-muted-foreground">Google/Microsoft 365 setup</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Email Migration</div>
-                      <div className="text-xs text-muted-foreground">Transfer from existing accounts</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Data Backup</div>
-                      <div className="text-xs text-muted-foreground">Automated backup solutions</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Process Automation</div>
-                      <div className="text-xs text-muted-foreground">Business workflow optimization</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">CRM Integration</div>
-                      <div className="text-xs text-muted-foreground">Project management tools setup</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Custom Automation</div>
-                      <div className="text-xs text-muted-foreground">Tailored automation projects</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Team Training</div>
-                      <div className="text-xs text-muted-foreground">Comprehensive training sessions</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Network Upgrades</div>
-                      <div className="text-xs text-muted-foreground">Performance optimization</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Remote Support</div>
-                      <div className="text-xs text-muted-foreground">Troubleshooting sessions</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Priority Support</div>
-                      <div className="text-xs text-muted-foreground">30-60 days included support</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Handover Training</div>
-                      <div className="text-xs text-muted-foreground">Initial system training</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg border border-border/50 hover:border-accent/50 transition-colors">
-                    <Check className="text-accent h-5 w-5 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium text-sm mb-1">Custom Services</div>
-                      <div className="text-xs text-muted-foreground">On-demand technical assistance</div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
+                      <Check className="text-primary h-4 w-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Handover Training</div>
+                        <div className="text-xs text-muted-foreground">Initial system training</div>
+                      </div>
                     </div>
                   </div>
                 </div>
