@@ -16,7 +16,7 @@ export const Partnership = () => {
   const {
     t
   } = useLanguage();
-  return <section id="partnership" className="py-24 partnership-bg">
+  return <section id="partnership" className="partnership-bg py-[24px]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <div className="partnership-badge">
@@ -74,7 +74,7 @@ export const Partnership = () => {
 
         <div className="max-w-3xl mx-auto">
           <Card className="partnership-highlight-card">
-            <CardContent className="pt-8 py-[15px]">
+            <CardContent className="pt-8 py-[20px]">
               <h3 className="text-2xl font-bold mb-4 text-center">{t("partnership.why.title")}</h3>
               <ul className="space-y-3 mb-8">
                 <li className="partnership-benefit">
