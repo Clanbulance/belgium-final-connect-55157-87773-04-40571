@@ -125,20 +125,187 @@ export const Pricing = () => {
           ))}
         </div>
 
-        <div className="mt-20 text-center">
-          <Card className="pricing-seo-card">
-            <CardHeader>
-              <CardTitle className="text-2xl">{t("pricing.seo.title")}</CardTitle>
-              <div className="text-3xl font-bold text-primary">€999</div>
-              <CardDescription>{t("pricing.seo.delivery")}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="mb-4">{t("pricing.seo.desc")}</p>
-              <Button variant="secondary" size="lg" onClick={() => handlePricingClick("Automation Package")}>
-                {t("pricing.seo.cta")}
-              </Button>
-            </CardContent>
-          </Card>
+        {/* IT Services Section */}
+        <div className="mt-32">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl font-bold mb-4">{t("pricing.it.title")}</h3>
+            <p className="text-lg text-muted-foreground mb-2">{t("pricing.it.subtitle")}</p>
+            <p className="text-sm text-muted-foreground italic">{t("pricing.it.note")}</p>
+          </div>
+
+          <div className="grid grid-md-2 grid-lg-3 gap-8 max-w-6xl mx-auto">
+            {/* Digital Starter Pack */}
+            <Card className="pricing-card">
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-2xl mb-4">{t("pricing.it1.name")}</CardTitle>
+                <div className="mb-3">
+                  <span className="text-2xl font-bold text-primary">{t("pricing.it1.price")}</span>
+                </div>
+                <div className="text-sm text-muted-foreground mb-4">
+                  {t("pricing.delivery")}: {t("pricing.it1.delivery")}
+                </div>
+                <CardDescription className="text-base">{t("pricing.it1.desc")}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-8">
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it1.f1")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it1.f2")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it1.f3")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it1.f4")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it1.f5")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it1.f6")}</span>
+                  </li>
+                </ul>
+                <Button variant="outline" className="w-full" size="lg" onClick={() => handlePricingClick(t("pricing.it1.name"))}>
+                  {t("pricing.cta")}
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Business Launch - Most Popular */}
+            <Card className="pricing-card pricing-card-popular relative">
+              <div className="pricing-badge-container">
+                <span className="popular-badge">{t("pricing.popular")}</span>
+              </div>
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-2xl mb-4">{t("pricing.it2.name")}</CardTitle>
+                <div className="mb-3">
+                  <span className="text-2xl font-bold text-primary">{t("pricing.it2.price")}</span>
+                </div>
+                <div className="text-sm text-muted-foreground mb-4">
+                  {t("pricing.delivery")}: {t("pricing.it2.delivery")}
+                </div>
+                <CardDescription className="text-base">{t("pricing.it2.desc")}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-8">
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it2.f1")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it2.f2")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it2.f3")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it2.f4")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it2.f5")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it2.f6")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it2.f7")}</span>
+                  </li>
+                </ul>
+                <Button variant="hero" className="w-full" size="lg" onClick={() => handlePricingClick(t("pricing.it2.name"))}>
+                  {t("pricing.cta")}
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Complete IT Setup */}
+            <Card className="pricing-card">
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-2xl mb-4">{t("pricing.it3.name")}</CardTitle>
+                <div className="mb-3">
+                  <span className="text-2xl font-bold text-primary">{t("pricing.it3.price")}</span>
+                </div>
+                <div className="text-sm text-muted-foreground mb-4">
+                  {t("pricing.delivery")}: {t("pricing.it3.delivery")}
+                </div>
+                <CardDescription className="text-base">{t("pricing.it3.desc")}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-8">
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it3.f1")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it3.f2")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it3.f3")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it3.f4")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it3.f5")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it3.f6")}</span>
+                  </li>
+                  <li className="pricing-feature">
+                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
+                    <span className="text-sm">{t("pricing.it3.f7")}</span>
+                  </li>
+                </ul>
+                <Button variant="outline" className="w-full" size="lg" onClick={() => handlePricingClick(t("pricing.it3.name"))}>
+                  {t("pricing.cta")}
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* À La Carte Card */}
+          <div className="mt-12 max-w-2xl mx-auto">
+            <Card className="pricing-seo-card">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl">{t("pricing.alacarte.name")}</CardTitle>
+                <div className="text-xl font-bold text-primary">{t("pricing.alacarte.price")}</div>
+                <CardDescription className="text-base">{t("pricing.alacarte.desc")}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
+                  <li>• {t("pricing.alacarte.f1")}</li>
+                  <li>• {t("pricing.alacarte.f2")}</li>
+                  <li>• {t("pricing.alacarte.f3")}</li>
+                  <li>• {t("pricing.alacarte.f4")}</li>
+                  <li>• {t("pricing.alacarte.f5")}</li>
+                  <li>• {t("pricing.alacarte.f6")}</li>
+                </ul>
+                <div className="text-center">
+                  <Button variant="secondary" size="lg" onClick={() => handlePricingClick(t("pricing.alacarte.name"))}>
+                    {t("pricing.alacarte.cta")}
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>

@@ -97,7 +97,9 @@ export const Partnership = () => {
               </ul>
 
               <div className="text-center">
-                <Button variant="hero" size="lg" className="text-lg" onClick={scrollToContact}></Button>
+                <Button variant="hero" size="lg" className="text-lg" onClick={scrollToContact}>
+                  {t("partnership.cta")}
+                </Button>
               </div>
             </CardContent>
           </Card>

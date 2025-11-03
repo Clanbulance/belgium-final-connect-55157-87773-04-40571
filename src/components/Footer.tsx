@@ -25,7 +25,7 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-sm footer-text mb-4">
-              {t('footer.desc')}
+              Digital & IT solutions for Belgian freelancers and SMEs. Quality engineering, zero vendor lock-in, complete ownership.
             </p>
             <p className="text-xs footer-text-light">
               {t('footer.collab')} RJDP Consulting

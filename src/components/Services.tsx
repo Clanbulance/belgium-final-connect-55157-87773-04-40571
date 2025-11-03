@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, Target, Cog, TrendingUp, Globe, Shield } from "lucide-react";
+import { Zap, Globe, Server, Mail, Database, Wrench } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Services = () => {
@@ -7,28 +7,40 @@ export const Services = () => {
 
   const services = [
     {
-      icon: Target,
+      icon: Globe,
       titleKey: 'services.1.title',
       descKey: 'services.1.desc',
       outcomeKey: 'services.1.outcome'
     },
     {
-      icon: Globe,
+      icon: Server,
       titleKey: 'services.2.title',
       descKey: 'services.2.desc',
       outcomeKey: 'services.2.outcome'
     },
     {
-      icon: Zap,
+      icon: Wrench,
       titleKey: 'services.3.title',
       descKey: 'services.3.desc',
       outcomeKey: 'services.3.outcome'
     },
     {
-      icon: Cog,
+      icon: Mail,
       titleKey: 'services.4.title',
       descKey: 'services.4.desc',
       outcomeKey: 'services.4.outcome'
+    },
+    {
+      icon: Database,
+      titleKey: 'services.5.title',
+      descKey: 'services.5.desc',
+      outcomeKey: 'services.5.outcome'
+    },
+    {
+      icon: Zap,
+      titleKey: 'services.6.title',
+      descKey: 'services.6.desc',
+      outcomeKey: 'services.6.outcome'
     }
   ];
 
@@ -44,7 +56,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-md-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-md-2 grid-lg-3 gap-8 max-w-6xl mx-auto">
           {services.map((service) => (
             <Card key={service.titleKey} className="service-card group">
               <CardHeader>
