@@ -17,7 +17,7 @@ export const Partnership = () => {
     t
   } = useLanguage();
   return <section id="partnership" className="partnership-bg py-[24px]">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-[16px]">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <div className="partnership-badge">
             <Handshake style={{
