@@ -179,11 +179,8 @@ export const Pricing = () => {
               </CardContent>
             </Card>
 
-            {/* Business Launch - Most Popular */}
-            <Card className="pricing-card pricing-card-popular relative">
-              <div className="pricing-badge-container">
-                <span className="popular-badge">{t("pricing.popular")}</span>
-              </div>
+            {/* Business Launch */}
+            <Card className="pricing-card relative">
               <CardHeader className="text-center pb-6">
                 <CardTitle className="text-2xl mb-4">{t("pricing.it2.name")}</CardTitle>
                 <div className="mb-3">
