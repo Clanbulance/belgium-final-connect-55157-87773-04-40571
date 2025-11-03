@@ -126,94 +126,187 @@ export const Pricing = () => {
         </div>
 
         {/* IT Services Section */}
-        <div className="mt-32">
+        <div className="mt-32 overflow-hidden">
           <div className="text-center mb-16">
             <h2 className="section-title mt-16">{t("pricing.it.title")}</h2>
             <p className="text-lg text-muted-foreground mb-2">{t("pricing.it.subtitle")}</p>
             <p className="text-sm text-muted-foreground italic">{t("pricing.it.note")}</p>
           </div>
 
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto px-4">
             {/* Circular Service Catalog */}
-            <div className="relative w-full aspect-square max-w-4xl mx-auto mb-12">
+            <div className="relative w-full h-[800px] max-w-5xl mx-auto mb-12">
               {/* Center Circle */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-background border-8 border-muted flex flex-col items-center justify-center z-10">
-                <h3 className="text-4xl font-bold">SERVICE</h3>
-                <p className="text-2xl text-muted-foreground tracking-widest">CATALOG</p>
+              <div 
+                className="absolute rounded-full bg-background border-[12px] border-muted flex flex-col items-center justify-center shadow-lg"
+                style={{
+                  width: '280px',
+                  height: '280px',
+                  left: '50%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  zIndex: 20,
+                }}
+              >
+                <h3 className="text-5xl font-bold tracking-tight">SERVICE</h3>
+                <p className="text-xl text-muted-foreground tracking-[0.3em] mt-1">CATALOG</p>
               </div>
 
-              {/* Connecting Lines Circle */}
-              <svg className="absolute inset-0 w-full h-full" style={{ transform: 'rotate(-90deg)' }}>
-                <circle cx="50%" cy="50%" r="42%" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="8 8" className="text-border opacity-40" />
-              </svg>
+              {/* Dashed Circle Guide */}
+              <div 
+                className="absolute rounded-full border-2 border-dashed border-border/30"
+                style={{
+                  width: '650px',
+                  height: '650px',
+                  left: '50%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  zIndex: 1,
+                }}
+              />
 
-              {/* Service Items */}
+              {/* Service Items Positioned in Circle */}
               {[
-                { icon: Globe, title: "Online Presence", desc: "Professional websites, domains, SEO & Google Business optimization", color: "rgb(59, 130, 246)", angle: 0 },
-                { icon: Headphones, title: "IT Support", desc: "Software, hardware, and network support for smooth operations", color: "rgb(239, 68, 68)", angle: 51 },
-                { icon: Cloud, title: "Cloud Services", desc: "Secure cloud storage and computing solutions with remote access", color: "rgb(251, 146, 60)", angle: 102 },
-                { icon: Settings, title: "Cybersecurity", desc: "Protecting systems from threats, ensuring data security", color: "rgb(34, 197, 94)", angle: 153 },
-                { icon: Database, title: "Data & Backup", desc: "Automated backup solutions and data management systems", color: "rgb(20, 184, 166)", angle: 204 },
-                { icon: Server, title: "Infrastructure", desc: "Network setup, workstations, hardware sourcing & upgrades", color: "rgb(236, 72, 153)", angle: 255 },
-                { icon: Zap, title: "Automation", desc: "Process automation, CRM integration & custom solutions", color: "rgb(168, 85, 247)", angle: 306 },
+                { 
+                  icon: Globe, 
+                  title: "Online Presence", 
+                  desc: "Professional websites, domains, SEO & Google Business optimization", 
+                  color: "#3b82f6",
+                  position: { top: '5%', left: '50%' },
+                  textAlign: 'center' as const,
+                  textPos: { top: '-70px', left: '50%', transform: 'translateX(-50%)' }
+                },
+                { 
+                  icon: Headphones, 
+                  title: "IT Support", 
+                  desc: "Software, hardware, and network support for smooth operations", 
+                  color: "#ef4444",
+                  position: { top: '20%', right: '8%' },
+                  textAlign: 'left' as const,
+                  textPos: { top: '50%', left: '110px', transform: 'translateY(-50%)' }
+                },
+                { 
+                  icon: Cloud, 
+                  title: "Cloud Services", 
+                  desc: "Secure cloud storage and computing solutions with remote access", 
+                  color: "#fb923c",
+                  position: { top: '50%', right: '3%' },
+                  textAlign: 'left' as const,
+                  textPos: { top: '50%', left: '110px', transform: 'translateY(-50%)' }
+                },
+                { 
+                  icon: Settings, 
+                  title: "Cybersecurity", 
+                  desc: "Protecting systems from threats, ensuring data security", 
+                  color: "#14b8a6",
+                  position: { bottom: '20%', right: '8%' },
+                  textAlign: 'left' as const,
+                  textPos: { top: '50%', left: '110px', transform: 'translateY(-50%)' }
+                },
+                { 
+                  icon: Database, 
+                  title: "Data & Backup", 
+                  desc: "Automated backup solutions and data management systems", 
+                  color: "#ec4899",
+                  position: { bottom: '5%', left: '50%' },
+                  textAlign: 'center' as const,
+                  textPos: { bottom: '-70px', left: '50%', transform: 'translateX(-50%)' }
+                },
+                { 
+                  icon: Server, 
+                  title: "Infrastructure", 
+                  desc: "Network setup, workstations, hardware sourcing & upgrades", 
+                  color: "#a855f7",
+                  position: { bottom: '20%', left: '8%' },
+                  textAlign: 'right' as const,
+                  textPos: { top: '50%', right: '110px', transform: 'translateY(-50%)' }
+                },
+                { 
+                  icon: Zap, 
+                  title: "Automation", 
+                  desc: "Process automation, CRM integration & custom solutions", 
+                  color: "#8b5cf6",
+                  position: { top: '20%', left: '8%' },
+                  textAlign: 'right' as const,
+                  textPos: { top: '50%', right: '110px', transform: 'translateY(-50%)' }
+                },
               ].map((service, idx) => {
-                const radius = 42;
-                const x = 50 + radius * Math.cos((service.angle * Math.PI) / 180);
-                const y = 50 + radius * Math.sin((service.angle * Math.PI) / 180);
-                const isLeft = x < 50;
+                const isTopBottom = service.position.top === '5%' || service.position.bottom === '5%';
+                const isRight = 'right' in service.position;
+                const isLeft = 'left' in service.position && service.position.left !== '50%';
                 
                 return (
                   <div
                     key={idx}
                     className="absolute group"
                     style={{
-                      left: `${x}%`,
-                      top: `${y}%`,
-                      transform: 'translate(-50%, -50%)',
+                      ...service.position,
+                      transform: service.position.left === '50%' ? 'translateX(-50%)' : 'none',
+                      zIndex: 10,
                     }}
                   >
-                    {/* Connection Line */}
-                    <div
-                      className="absolute w-20 h-0.5 origin-left"
+                    {/* Connection Line to Center */}
+                    <svg 
+                      className="absolute"
                       style={{
-                        backgroundColor: service.color,
-                        left: isLeft ? 'auto' : '50%',
+                        width: '200px',
+                        height: '200px',
+                        left: isTopBottom ? '50%' : (isLeft ? 'auto' : '50%'),
                         right: isLeft ? '50%' : 'auto',
                         top: '50%',
-                        transform: `rotate(${service.angle + (isLeft ? 180 : 0)}deg) translateY(-50%)`,
-                        opacity: 0.4,
+                        transform: 'translate(-50%, -50%)',
+                        pointerEvents: 'none',
+                        zIndex: 0,
                       }}
-                    />
-                    
-                    {/* Dot on line */}
+                    >
+                      <line 
+                        x1={isTopBottom ? '100' : (isLeft ? '150' : '50')}
+                        y1="100"
+                        x2="100"
+                        y2="100"
+                        stroke={service.color}
+                        strokeWidth="2"
+                        opacity="0.3"
+                      />
+                    </svg>
+
+                    {/* Connection Dot */}
                     <div
-                      className="absolute w-3 h-3 rounded-full"
+                      className="absolute w-4 h-4 rounded-full"
                       style={{
                         backgroundColor: service.color,
-                        left: isLeft ? '-2.5rem' : '2.5rem',
-                        top: '50%',
-                        transform: 'translate(-50%, -50%)',
+                        left: isTopBottom ? '50%' : (isLeft ? '-30px' : 'auto'),
+                        right: isTopBottom ? 'auto' : (isLeft ? 'auto' : '-30px'),
+                        top: isTopBottom ? (service.position.top === '5%' ? 'auto' : '-30px') : '50%',
+                        bottom: isTopBottom && service.position.top === '5%' ? '-30px' : 'auto',
+                        transform: isTopBottom ? 'translateX(-50%)' : 'translateY(-50%)',
+                        zIndex: 5,
                       }}
                     />
 
                     {/* Icon Circle */}
                     <div
-                      className="w-20 h-20 rounded-full flex items-center justify-center border-4 bg-background transition-transform group-hover:scale-110 relative z-10"
-                      style={{ borderColor: service.color }}
+                      className="w-24 h-24 rounded-full flex items-center justify-center border-[6px] bg-background transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl relative"
+                      style={{ borderColor: service.color, zIndex: 10 }}
                     >
-                      <service.icon className="w-10 h-10" style={{ color: service.color }} />
+                      <service.icon className="w-12 h-12" style={{ color: service.color }} />
                     </div>
 
                     {/* Text Content */}
                     <div
-                      className={`absolute top-1/2 -translate-y-1/2 w-56 ${
-                        isLeft ? 'right-24 text-right' : 'left-24 text-left'
-                      }`}
+                      className="absolute w-56"
+                      style={{
+                        ...service.textPos,
+                        textAlign: service.textAlign,
+                      }}
                     >
-                      <h4 className="font-bold text-lg mb-1" style={{ color: service.color }}>
+                      <h4 
+                        className="font-bold text-lg mb-1.5 tracking-tight" 
+                        style={{ color: service.color }}
+                      >
                         {service.title}
                       </h4>
-                      <p className="text-sm text-muted-foreground italic leading-snug">
+                      <p className="text-xs text-muted-foreground italic leading-relaxed">
                         {service.desc}
                       </p>
                     </div>
