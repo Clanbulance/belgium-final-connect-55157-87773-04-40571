@@ -13,7 +13,7 @@ export const Hero = () => {
 
   return (
     <section className="hero-minimal">
-      <div className="container mx-auto px-4 pt-24 pb-12">
+      <div className="container mx-auto px-4 py-24">
         <div className="max-w-4xl mx-auto">
           {/* Headline */}
           <h1 className="hero-title-minimal">
