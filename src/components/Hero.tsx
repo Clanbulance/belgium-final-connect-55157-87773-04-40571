@@ -44,30 +44,23 @@ export const Hero = () => {
             </button>
           </div>
 
-          {/* Value Props */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="value-card-minimal">
-              <CheckCircle2 className="w-5 h-5 text-primary mb-2" />
-              <h3 className="font-semibold mb-1">{t('hero.value1.title')}</h3>
-              <p className="text-sm text-muted-foreground">{t('hero.value1.desc')}</p>
+          {/* Trust Badges */}
+          <div className="flex flex-wrap justify-center items-center gap-6 opacity-70">
+            <div className="flex items-center gap-2 text-sm">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span>No Vendor Lock-in</span>
             </div>
-            
-            <div className="value-card-minimal">
-              <CheckCircle2 className="w-5 h-5 text-primary mb-2" />
-              <h3 className="font-semibold mb-1">{t('hero.value2.title')}</h3>
-              <p className="text-sm text-muted-foreground">{t('hero.value2.desc')}</p>
+            <div className="flex items-center gap-2 text-sm">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span>NL/FR/EN Support</span>
             </div>
-            
-            <div className="value-card-minimal">
-              <CheckCircle2 className="w-5 h-5 text-primary mb-2" />
-              <h3 className="font-semibold mb-1">{t('hero.value3.title')}</h3>
-              <p className="text-sm text-muted-foreground">{t('hero.value3.desc')}</p>
+            <div className="flex items-center gap-2 text-sm">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span>EU-Compliant</span>
             </div>
-            
-            <div className="value-card-minimal">
-              <CheckCircle2 className="w-5 h-5 text-primary mb-2" />
-              <h3 className="font-semibold mb-1">{t('hero.value4.title')}</h3>
-              <p className="text-sm text-muted-foreground">{t('hero.value4.desc')}</p>
+            <div className="flex items-center gap-2 text-sm">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span>On-site & Remote</span>
             </div>
           </div>
 
