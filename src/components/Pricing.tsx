@@ -126,38 +126,38 @@ export const Pricing = () => {
         </div>
 
         {/* IT Services Section */}
-        <div className="mt-32 py-12">
-          <div className="text-center mb-20">
-            <h2 className="section-title mt-16">{t("pricing.it.title")}</h2>
+        <div className="mt-24 py-16 bg-gradient-to-b from-background via-accent/5 to-background">
+          <div className="text-center mb-12">
+            <h2 className="section-title">{t("pricing.it.title")}</h2>
             <p className="text-lg text-muted-foreground mb-2">{t("pricing.it.subtitle")}</p>
             <p className="text-sm text-muted-foreground italic">{t("pricing.it.note")}</p>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-6xl mx-auto px-4">
             {/* Circular Service Catalog */}
-            <div className="relative w-full mx-auto mb-16" style={{ height: '900px', maxWidth: '1100px' }}>
+            <div className="relative w-full mx-auto mb-12" style={{ height: '650px', maxWidth: '800px' }}>
               {/* Center Circle */}
               <div 
-                className="absolute rounded-full bg-background border-[16px] border-border flex flex-col items-center justify-center shadow-2xl"
+                className="absolute rounded-full bg-gradient-to-br from-background to-accent/10 border-8 border-accent/30 flex flex-col items-center justify-center shadow-xl"
                 style={{
-                  width: '320px',
-                  height: '320px',
+                  width: '220px',
+                  height: '220px',
                   left: '50%',
                   top: '50%',
                   transform: 'translate(-50%, -50%)',
                   zIndex: 30,
                 }}
               >
-                <h3 className="text-6xl font-bold tracking-tight text-foreground">SERVICE</h3>
-                <p className="text-2xl text-muted-foreground tracking-[0.35em] mt-2">CATALOG</p>
+                <h3 className="text-4xl font-bold tracking-tight text-foreground">SERVICE</h3>
+                <p className="text-lg text-muted-foreground tracking-[0.3em] mt-1">CATALOG</p>
               </div>
 
               {/* Dashed Circle Guide */}
               <svg 
                 className="absolute"
                 style={{
-                  width: '750px',
-                  height: '750px',
+                  width: '550px',
+                  height: '550px',
                   left: '50%',
                   top: '50%',
                   transform: 'translate(-50%, -50%)',
@@ -165,14 +165,14 @@ export const Pricing = () => {
                 }}
               >
                 <circle 
-                  cx="375" 
-                  cy="375" 
-                  r="375" 
+                  cx="275" 
+                  cy="275" 
+                  r="275" 
                   fill="none" 
                   stroke="currentColor" 
                   strokeWidth="2" 
-                  strokeDasharray="10 10" 
-                  className="text-border opacity-20"
+                  strokeDasharray="8 8" 
+                  className="text-accent/20"
                 />
               </svg>
 
@@ -183,57 +183,56 @@ export const Pricing = () => {
                   title: "Online Presence", 
                   desc: "Professional websites, domains, SEO & Google Business optimization", 
                   color: "#3b82f6",
-                  angle: -90, // Top
+                  angle: -90,
                 },
                 { 
                   icon: Headphones, 
                   title: "IT Support", 
                   desc: "Software, hardware, and network support for smooth operations", 
                   color: "#ef4444",
-                  angle: -38, // Top right
+                  angle: -38,
                 },
                 { 
                   icon: Cloud, 
                   title: "Cloud Services", 
                   desc: "Secure cloud storage and computing solutions with remote access", 
                   color: "#fb923c",
-                  angle: 14, // Right
+                  angle: 14,
                 },
                 { 
                   icon: Settings, 
                   title: "Cybersecurity", 
                   desc: "Protecting systems from threats, ensuring data security", 
                   color: "#14b8a6",
-                  angle: 66, // Bottom right
+                  angle: 66,
                 },
                 { 
                   icon: Database, 
                   title: "Data & Backup", 
                   desc: "Automated backup solutions and data management systems", 
                   color: "#ec4899",
-                  angle: 118, // Bottom
+                  angle: 118,
                 },
                 { 
                   icon: Server, 
                   title: "Infrastructure", 
                   desc: "Network setup, workstations, hardware sourcing & upgrades", 
                   color: "#a855f7",
-                  angle: 170, // Bottom left
+                  angle: 170,
                 },
                 { 
                   icon: Zap, 
                   title: "Automation", 
                   desc: "Process automation, CRM integration & custom solutions", 
                   color: "#8b5cf6",
-                  angle: -142, // Top left
+                  angle: -142,
                 },
               ].map((service, idx) => {
-                const radius = 375; // Half of the circle diameter
+                const radius = 275;
                 const angleRad = (service.angle * Math.PI) / 180;
-                const x = 50 + (radius / 5.5) * Math.cos(angleRad); // Percentage positioning
+                const x = 50 + (radius / 5.5) * Math.cos(angleRad);
                 const y = 50 + (radius / 5.5) * Math.sin(angleRad);
                 
-                // Determine text positioning
                 const isTop = service.angle < -45 && service.angle > -135;
                 const isBottom = service.angle > 45 && service.angle < 135;
                 const isLeft = service.angle > 135 || service.angle < -135;
@@ -260,13 +259,12 @@ export const Pricing = () => {
                         y2={`${y}%`}
                         stroke={service.color}
                         strokeWidth="2"
-                        opacity="0.25"
+                        opacity="0.2"
                       />
-                      {/* Dot on line */}
                       <circle 
                         cx={`${50 + ((x - 50) * 0.65)}%`}
                         cy={`${50 + ((y - 50) * 0.65)}%`}
-                        r="6"
+                        r="4"
                         fill={service.color}
                       />
                     </svg>
@@ -283,31 +281,31 @@ export const Pricing = () => {
                     >
                       {/* Icon Circle */}
                       <div
-                        className="w-28 h-28 rounded-full flex items-center justify-center border-[8px] bg-background transition-all duration-300 hover:scale-110 hover:shadow-2xl mx-auto"
+                        className="w-20 h-20 rounded-full flex items-center justify-center border-4 bg-background transition-all duration-300 hover:scale-110 hover:shadow-lg mx-auto"
                         style={{ borderColor: service.color }}
                       >
-                        <service.icon className="w-14 h-14" style={{ color: service.color }} />
+                        <service.icon className="w-10 h-10" style={{ color: service.color }} />
                       </div>
 
                       {/* Text Content */}
                       <div
-                        className="absolute w-64"
+                        className="absolute w-52"
                         style={{
                           left: '50%',
                           transform: 'translateX(-50%)',
-                          ...(isTop && { bottom: 'calc(100% + 20px)', textAlign: 'center' }),
-                          ...(isBottom && { top: 'calc(100% + 20px)', textAlign: 'center' }),
-                          ...(isLeft && !isTop && !isBottom && { right: 'calc(100% + 20px)', textAlign: 'right', left: 'auto', transform: 'none' }),
-                          ...(isRight && !isTop && !isBottom && { left: 'calc(100% + 20px)', textAlign: 'left', transform: 'none' }),
+                          ...(isTop && { bottom: 'calc(100% + 12px)', textAlign: 'center' }),
+                          ...(isBottom && { top: 'calc(100% + 12px)', textAlign: 'center' }),
+                          ...(isLeft && !isTop && !isBottom && { right: 'calc(100% + 12px)', textAlign: 'right', left: 'auto', transform: 'none' }),
+                          ...(isRight && !isTop && !isBottom && { left: 'calc(100% + 12px)', textAlign: 'left', transform: 'none' }),
                         }}
                       >
                         <h4 
-                          className="font-bold text-xl mb-2 tracking-tight" 
+                          className="font-bold text-base mb-1 tracking-tight" 
                           style={{ color: service.color }}
                         >
                           {service.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground italic leading-relaxed">
+                        <p className="text-xs text-muted-foreground italic leading-relaxed">
                           {service.desc}
                         </p>
                       </div>
