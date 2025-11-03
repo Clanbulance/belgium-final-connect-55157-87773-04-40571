@@ -128,7 +128,7 @@ export const Pricing = () => {
         {/* IT Services Section */}
         <div className="mt-32">
           <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold mb-4 mt-12">{t("pricing.it.title")}</h3>
+            <h2 className="section-title">{t("pricing.it.title")}</h2>
             <p className="text-lg text-muted-foreground mb-2">{t("pricing.it.subtitle")}</p>
             <p className="text-sm text-muted-foreground italic">{t("pricing.it.note")}</p>
           </div>
