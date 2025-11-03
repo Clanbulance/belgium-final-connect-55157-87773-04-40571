@@ -125,7 +125,7 @@ export const Pricing = () => {
                     </li>
                     <li className="pricing-feature">
                       <Check className="text-accent h-5 w-5 flex-shrink-0" />
-                      <span className="text-sm">Domain & Hosting (EU-based)</span>
+                      <span className="text-sm">Domain &amp; Hosting</span>
                     </li>
                     <li className="pricing-feature">
                       <Check className="text-accent h-5 w-5 flex-shrink-0" />
