@@ -162,10 +162,6 @@ export const Pricing = () => {
                   </li>
                   <li className="pricing-feature">
                     <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
-                    <span className="text-sm">{t("pricing.it1.f4")}</span>
-                  </li>
-                  <li className="pricing-feature">
-                    <Check style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} className="text-accent" />
                     <span className="text-sm">{t("pricing.it1.f5")}</span>
                   </li>
                   <li className="pricing-feature">
