@@ -133,186 +133,189 @@ export const Pricing = () => {
             <p className="text-sm text-muted-foreground italic">{t("pricing.it.note")}</p>
           </div>
 
-          <div className="max-w-6xl mx-auto px-4">
-            {/* Circular Service Catalog */}
-            <div className="relative w-full mx-auto mb-12" style={{ height: '650px', maxWidth: '800px' }}>
-              {/* Center Circle */}
+          <div className="max-w-7xl mx-auto px-4">
+            {/* Pie Chart Service Catalog */}
+            <div className="relative w-full mx-auto mb-12" style={{ height: '700px', maxWidth: '1000px' }}>
+              {/* Center Circle with Title */}
               <div 
-                className="absolute rounded-full bg-gradient-to-br from-background to-accent/10 border-8 border-accent/30 flex flex-col items-center justify-center shadow-xl"
+                className="absolute rounded-full bg-background border-8 border-border flex flex-col items-center justify-center shadow-xl z-30"
                 style={{
-                  width: '220px',
-                  height: '220px',
+                  width: '200px',
+                  height: '200px',
                   left: '50%',
                   top: '50%',
                   transform: 'translate(-50%, -50%)',
-                  zIndex: 30,
                 }}
               >
-                <h3 className="text-4xl font-bold tracking-tight text-foreground">SERVICE</h3>
-                <p className="text-lg text-muted-foreground tracking-[0.3em] mt-1">CATALOG</p>
+                <h3 className="text-2xl font-bold tracking-tight text-center leading-tight">Key<br/>Services</h3>
               </div>
 
-              {/* Dashed Circle Guide */}
+              {/* Pie Chart Segments */}
               <svg 
                 className="absolute"
                 style={{
-                  width: '550px',
-                  height: '550px',
+                  width: '500px',
+                  height: '500px',
                   left: '50%',
                   top: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  zIndex: 1,
+                  transform: 'translate(-50%, -50%) rotate(-90deg)',
+                  zIndex: 10,
                 }}
+                viewBox="0 0 100 100"
               >
-                <circle 
-                  cx="275" 
-                  cy="275" 
-                  r="275" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeDasharray="8 8" 
-                  className="text-accent/20"
-                />
+                {[
+                  { color: "#22c55e", startAngle: 0, endAngle: 51.4 },
+                  { color: "#3b82f6", startAngle: 51.4, endAngle: 102.8 },
+                  { color: "#0ea5e9", startAngle: 102.8, endAngle: 154.2 },
+                  { color: "#14b8a6", startAngle: 154.2, endAngle: 205.6 },
+                  { color: "#a855f7", startAngle: 205.6, endAngle: 257 },
+                  { color: "#ec4899", startAngle: 257, endAngle: 308.4 },
+                  { color: "#8b5cf6", startAngle: 308.4, endAngle: 360 },
+                ].map((segment, idx) => {
+                  const startAngle = (segment.startAngle * Math.PI) / 180;
+                  const endAngle = (segment.endAngle * Math.PI) / 180;
+                  const largeArcFlag = segment.endAngle - segment.startAngle > 180 ? 1 : 0;
+                  
+                  const x1 = 50 + 40 * Math.cos(startAngle);
+                  const y1 = 50 + 40 * Math.sin(startAngle);
+                  const x2 = 50 + 40 * Math.cos(endAngle);
+                  const y2 = 50 + 40 * Math.sin(endAngle);
+                  
+                  return (
+                    <path
+                      key={idx}
+                      d={`M 50 50 L ${x1} ${y1} A 40 40 0 ${largeArcFlag} 1 ${x2} ${y2} Z`}
+                      fill={segment.color}
+                      opacity="0.85"
+                      stroke="white"
+                      strokeWidth="0.5"
+                    />
+                  );
+                })}
               </svg>
 
-              {/* Service Items */}
+              {/* Icons on Segments */}
               {[
-                { 
-                  icon: Globe, 
-                  title: "Online Presence", 
-                  desc: "Professional websites, domains, SEO & Google Business optimization", 
-                  color: "#3b82f6",
-                  angle: -90,
-                },
-                { 
-                  icon: Headphones, 
-                  title: "IT Support", 
-                  desc: "Software, hardware, and network support for smooth operations", 
-                  color: "#ef4444",
-                  angle: -38,
-                },
-                { 
-                  icon: Cloud, 
-                  title: "Cloud Services", 
-                  desc: "Secure cloud storage and computing solutions with remote access", 
-                  color: "#fb923c",
-                  angle: 14,
-                },
-                { 
-                  icon: Settings, 
-                  title: "Cybersecurity", 
-                  desc: "Protecting systems from threats, ensuring data security", 
-                  color: "#14b8a6",
-                  angle: 66,
-                },
-                { 
-                  icon: Database, 
-                  title: "Data & Backup", 
-                  desc: "Automated backup solutions and data management systems", 
-                  color: "#ec4899",
-                  angle: 118,
-                },
-                { 
-                  icon: Server, 
-                  title: "Infrastructure", 
-                  desc: "Network setup, workstations, hardware sourcing & upgrades", 
-                  color: "#a855f7",
-                  angle: 170,
-                },
-                { 
-                  icon: Zap, 
-                  title: "Automation", 
-                  desc: "Process automation, CRM integration & custom solutions", 
-                  color: "#8b5cf6",
-                  angle: -142,
-                },
-              ].map((service, idx) => {
-                const radius = 275;
-                const angleRad = (service.angle * Math.PI) / 180;
-                const x = 50 + (radius / 5.5) * Math.cos(angleRad);
-                const y = 50 + (radius / 5.5) * Math.sin(angleRad);
-                
-                const isTop = service.angle < -45 && service.angle > -135;
-                const isBottom = service.angle > 45 && service.angle < 135;
-                const isLeft = service.angle > 135 || service.angle < -135;
-                const isRight = service.angle > -45 && service.angle < 45;
+                { icon: Globe, color: "#22c55e", angle: 25.7 },
+                { icon: Headphones, color: "#3b82f6", angle: 77.1 },
+                { icon: Cloud, color: "#0ea5e9", angle: 128.5 },
+                { icon: Settings, color: "#14b8a6", angle: 179.9 },
+                { icon: Database, color: "#a855f7", angle: 231.3 },
+                { icon: Server, color: "#ec4899", angle: 282.7 },
+                { icon: Zap, color: "#8b5cf6", angle: 334.2 },
+              ].map((item, idx) => {
+                const angleRad = (item.angle * Math.PI) / 180;
+                const radius = 150;
+                const x = 50 + (radius / 250) * 100 * Math.cos(angleRad);
+                const y = 50 + (radius / 250) * 100 * Math.sin(angleRad);
                 
                 return (
-                  <div key={idx}>
-                    {/* Connection Line */}
-                    <svg 
-                      className="absolute"
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        left: 0,
-                        top: 0,
-                        pointerEvents: 'none',
-                        zIndex: 5,
-                      }}
-                    >
-                      <line 
-                        x1="50%"
-                        y1="50%"
-                        x2={`${x}%`}
-                        y2={`${y}%`}
-                        stroke={service.color}
-                        strokeWidth="2"
-                        opacity="0.2"
-                      />
-                      <circle 
-                        cx={`${50 + ((x - 50) * 0.65)}%`}
-                        cy={`${50 + ((y - 50) * 0.65)}%`}
-                        r="4"
-                        fill={service.color}
-                      />
-                    </svg>
-
-                    {/* Service Item */}
-                    <div
-                      className="absolute"
-                      style={{
-                        left: `${x}%`,
-                        top: `${y}%`,
-                        transform: 'translate(-50%, -50%)',
-                        zIndex: 20,
-                      }}
-                    >
-                      {/* Icon Circle */}
-                      <div
-                        className="w-20 h-20 rounded-full flex items-center justify-center border-4 bg-background transition-all duration-300 hover:scale-110 hover:shadow-lg mx-auto"
-                        style={{ borderColor: service.color }}
-                      >
-                        <service.icon className="w-10 h-10" style={{ color: service.color }} />
-                      </div>
-
-                      {/* Text Content */}
-                      <div
-                        className="absolute w-52"
-                        style={{
-                          left: '50%',
-                          transform: 'translateX(-50%)',
-                          ...(isTop && { bottom: 'calc(100% + 12px)', textAlign: 'center' }),
-                          ...(isBottom && { top: 'calc(100% + 12px)', textAlign: 'center' }),
-                          ...(isLeft && !isTop && !isBottom && { right: 'calc(100% + 12px)', textAlign: 'right', left: 'auto', transform: 'none' }),
-                          ...(isRight && !isTop && !isBottom && { left: 'calc(100% + 12px)', textAlign: 'left', transform: 'none' }),
-                        }}
-                      >
-                        <h4 
-                          className="font-bold text-base mb-1 tracking-tight" 
-                          style={{ color: service.color }}
-                        >
-                          {service.title}
-                        </h4>
-                        <p className="text-xs text-muted-foreground italic leading-relaxed">
-                          {service.desc}
-                        </p>
-                      </div>
-                    </div>
+                  <div
+                    key={idx}
+                    className="absolute"
+                    style={{
+                      left: `${x}%`,
+                      top: `${y}%`,
+                      transform: 'translate(-50%, -50%)',
+                      zIndex: 20,
+                    }}
+                  >
+                    <item.icon className="w-10 h-10 text-white drop-shadow-lg" />
                   </div>
                 );
               })}
+
+              {/* Service Descriptions with Arrows */}
+              {[
+                { 
+                  title: "Online Presence", 
+                  desc: "Professional websites, domains, SEO & Google Business optimization",
+                  angle: 25.7,
+                  position: { top: '0%', left: '50%', transform: 'translate(-50%, -20px)' },
+                  arrowStart: { x: 50, y: 20 },
+                  arrowEnd: { x: 50, y: 10 }
+                },
+                { 
+                  title: "IT Support", 
+                  desc: "Software, hardware, and network support for smooth operations",
+                  angle: 77.1,
+                  position: { top: '20%', right: '2%' },
+                  arrowStart: { x: 95, y: 30 },
+                  arrowEnd: { x: 85, y: 25 }
+                },
+                { 
+                  title: "Cloud Services", 
+                  desc: "Secure cloud storage and computing solutions with remote access",
+                  angle: 128.5,
+                  position: { top: '50%', right: '2%', transform: 'translateY(-50%)' },
+                  arrowStart: { x: 95, y: 50 },
+                  arrowEnd: { x: 85, y: 50 }
+                },
+                { 
+                  title: "Cybersecurity", 
+                  desc: "Protecting systems from threats, ensuring data security",
+                  angle: 179.9,
+                  position: { bottom: '20%', right: '2%' },
+                  arrowStart: { x: 95, y: 70 },
+                  arrowEnd: { x: 85, y: 75 }
+                },
+                { 
+                  title: "Data & Backup", 
+                  desc: "Automated backup solutions and data management systems",
+                  angle: 231.3,
+                  position: { bottom: '0%', left: '50%', transform: 'translate(-50%, 20px)' },
+                  arrowStart: { x: 50, y: 80 },
+                  arrowEnd: { x: 50, y: 90 }
+                },
+                { 
+                  title: "Infrastructure", 
+                  desc: "Network setup, workstations, hardware sourcing & upgrades",
+                  angle: 282.7,
+                  position: { bottom: '20%', left: '2%' },
+                  arrowStart: { x: 5, y: 70 },
+                  arrowEnd: { x: 15, y: 75 }
+                },
+                { 
+                  title: "Automation", 
+                  desc: "Process automation, CRM integration & custom solutions",
+                  angle: 334.2,
+                  position: { top: '20%', left: '2%' },
+                  arrowStart: { x: 5, y: 30 },
+                  arrowEnd: { x: 15, y: 25 }
+                },
+              ].map((service, idx) => (
+                <div key={idx}>
+                  {/* Arrow Line */}
+                  <svg 
+                    className="absolute w-full h-full left-0 top-0 pointer-events-none"
+                    style={{ zIndex: 15 }}
+                  >
+                    <line 
+                      x1={`${service.arrowStart.x}%`}
+                      y1={`${service.arrowStart.y}%`}
+                      x2={`${service.arrowEnd.x}%`}
+                      y2={`${service.arrowEnd.y}%`}
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="text-border"
+                      markerEnd="url(#arrowhead)"
+                    />
+                  </svg>
+
+                  {/* Text Description */}
+                  <div
+                    className="absolute w-64 p-3 bg-background/95 backdrop-blur-sm rounded-lg border border-border shadow-md"
+                    style={service.position}
+                  >
+                    <h4 className="font-bold text-base mb-1 text-foreground">
+                      {service.title}
+                    </h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* CTA Card */}
