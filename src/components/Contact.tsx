@@ -196,18 +196,6 @@ export const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="contact-highlight-card">
-                <CardContent className="pt-6">
-                  <h3 className="font-bold text-lg mb-2">{t("contact.hours.title")}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {t("contact.hours.weekday")}
-                    <br />
-                    {t("contact.hours.saturday")}
-                    <br />
-                    {t("contact.hours.sunday")}
-                  </p>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
