@@ -29,7 +29,7 @@ export const Partnership = () => {
 
         <div className="grid grid-md-3 gap-8 mb-16">
           <Card className="partnership-card">
-            <CardContent className="pt-6 text-center">
+            <CardContent className="pt-10 text-center">
               <div className="icon-container-large bg-primary-10">
                 <Building2 style={{ width: "2rem", height: "2rem" }} className="text-primary" />
               </div>
@@ -39,7 +39,7 @@ export const Partnership = () => {
           </Card>
 
           <Card className="partnership-card">
-            <CardContent className="pt-6 text-center">
+            <CardContent className="pt-10 text-center">
               <div className="icon-container-large bg-accent-10">
                 <Award style={{ width: "2rem", height: "2rem" }} className="text-accent" />
               </div>
@@ -49,7 +49,7 @@ export const Partnership = () => {
           </Card>
 
           <Card className="partnership-card">
-            <CardContent className="pt-6 text-center">
+            <CardContent className="pt-10 text-center">
               <div className="icon-container-large bg-secondary-10">
                 <Globe2 style={{ width: "2rem", height: "2rem" }} className="text-secondary" />
               </div>
