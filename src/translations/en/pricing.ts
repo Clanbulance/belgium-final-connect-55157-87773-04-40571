@@ -30,7 +30,7 @@ export const pricing = {
   'pricing.cta': 'Choose',
   
   // IT Services packages (no prices)
-  'pricing.it.title': 'IT & Business Setup Packages',
+  'pricing.it.title': 'IT & Hardware solutions',
   'pricing.it.subtitle': 'Custom pricing based on your specific needs',
   'pricing.it.note': 'Final pricing depends on hardware, number of workstations, and specific requirements',
   

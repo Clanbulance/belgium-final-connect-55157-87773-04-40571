@@ -25,7 +25,7 @@ const Index = () => {
   }, []);
   return <div className="min-h-screen bg-background">
       <Navigation />
-      <Hero className="py-0 my-0 px-0" />
+      <Hero />
       <Services />
       <Pricing />
       <Partnership />

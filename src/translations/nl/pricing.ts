@@ -30,7 +30,7 @@ export const pricing = {
   'pricing.cta': 'Kies',
   
   // IT Services pakketten (geen prijzen)
-  'pricing.it.title': 'IT & Bedrijfssetup Pakketten',
+  'pricing.it.title': 'IT & Hardware oplossingen',
   'pricing.it.subtitle': 'Prijzen op maat van uw specifieke behoeften',
   'pricing.it.note': 'Finale prijzen afhankelijk van hardware, aantal werkstations en specifieke vereisten',
   
