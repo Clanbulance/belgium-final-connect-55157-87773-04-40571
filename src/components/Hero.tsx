@@ -14,7 +14,7 @@ export const Hero = () => {
     t
   } = useLanguage();
   return <section className="hero-minimal">
-      <div className="container mx-auto px-4 py-px">
+      <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {/* Headline */}
           <h1 className="hero-title-minimal">
