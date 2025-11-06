@@ -29,7 +29,7 @@ export const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 sm:mb-16">
             <button className="button-primary-minimal group" onClick={() => scrollToSection('contact')}>
               {t('hero.cta.primary')}
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -40,27 +40,27 @@ export const Hero = () => {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 opacity-70">
-            <div className="flex items-center gap-2 text-xs sm:text-sm">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center items-center gap-4 sm:gap-6 opacity-70 max-w-2xl mx-auto">
+            <div className="flex items-center gap-2 text-xs sm:text-sm justify-center">
               <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
               <span className="whitespace-nowrap">No Vendor Lock-in</span>
             </div>
-            <div className="flex items-center gap-2 text-xs sm:text-sm">
+            <div className="flex items-center gap-2 text-xs sm:text-sm justify-center">
               <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
               <span className="whitespace-nowrap">NL/FR/EN Support</span>
             </div>
-            <div className="flex items-center gap-2 text-xs sm:text-sm">
+            <div className="flex items-center gap-2 text-xs sm:text-sm justify-center">
               <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
               <span className="whitespace-nowrap">EU-Compliant</span>
             </div>
-            <div className="flex items-center gap-2 text-xs sm:text-sm">
+            <div className="flex items-center gap-2 text-xs sm:text-sm justify-center">
               <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
               <span className="whitespace-nowrap">On-site & Remote</span>
             </div>
           </div>
 
           {/* Note */}
-          <p className="text-sm text-center text-muted-foreground mt-12">
+          <p className="text-sm text-center text-muted-foreground mt-8 sm:mt-12 px-4">
             {t('hero.note')}
           </p>
         </div>
