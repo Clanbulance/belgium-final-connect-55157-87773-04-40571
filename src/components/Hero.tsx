@@ -40,22 +40,22 @@ export const Hero = () => {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center items-center gap-6 opacity-70">
-            <div className="flex items-center gap-2 text-sm">
-              <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span>No Vendor Lock-in</span>
+          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 opacity-70">
+            <div className="flex items-center gap-2 text-xs sm:text-sm">
+              <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+              <span className="whitespace-nowrap">No Vendor Lock-in</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
-              <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span>NL/FR/EN Support</span>
+            <div className="flex items-center gap-2 text-xs sm:text-sm">
+              <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+              <span className="whitespace-nowrap">NL/FR/EN Support</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
-              <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span>EU-Compliant</span>
+            <div className="flex items-center gap-2 text-xs sm:text-sm">
+              <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+              <span className="whitespace-nowrap">EU-Compliant</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
-              <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span>On-site & Remote</span>
+            <div className="flex items-center gap-2 text-xs sm:text-sm">
+              <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+              <span className="whitespace-nowrap">On-site & Remote</span>
             </div>
           </div>
 
