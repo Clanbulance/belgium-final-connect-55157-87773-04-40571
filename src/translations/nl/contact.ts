@@ -1,5 +1,5 @@
 export const contact = {
-  "contact.title": "Laten We Samen Bouwen",
+  "contact.title": "Contacteer ons",
   "contact.subtitle":
     "Klaar om uw digitale aanwezigheid te transformeren? Neem contact op voor een gratis consultatie.",
   "contact.form.name": "Naam",
