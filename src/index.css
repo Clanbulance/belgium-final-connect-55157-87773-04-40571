@@ -496,6 +496,7 @@ button {
   gap: 2rem;
 }
 
+a.nav-logo,
 .nav-logo {
   display: flex;
   align-items: center;
@@ -508,6 +509,7 @@ button {
   margin-left: -1.625rem;
   border-radius: 0.5rem;
   min-width: 0;
+  text-decoration: none !important;
 }
 
 .nav-logo span {
