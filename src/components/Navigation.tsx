@@ -2,14 +2,6 @@ import { Building2, Languages } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 
-const scrollToSection = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    window.history.pushState(null, '', `#${id}`);
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-};
-
 export const Navigation = () => {
   const { language, setLanguage, t } = useLanguage();
 
@@ -17,8 +9,10 @@ export const Navigation = () => {
     <nav className="nav-bar">
       <div className="container mx-auto px-4">
         <div className="nav-content">
-          <button 
-            onClick={() => {
+          <a 
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
               window.history.pushState(null, '', '/');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
@@ -29,21 +23,21 @@ export const Navigation = () => {
               <h2 className="logo-title">RJDP Consulting</h2>
               <p className="logo-subtitle">{t('nav.subtitle')}</p>
             </div>
-          </button>
+          </a>
           
           <div className="nav-links hidden-md flex-md items-center gap-6">
-            <button onClick={() => scrollToSection('services')} className="nav-link">
+            <a href="#services" className="nav-link">
               {t('nav.services')}
-            </button>
-            <button onClick={() => scrollToSection('pricing')} className="nav-link">
+            </a>
+            <a href="#pricing" className="nav-link">
               {t('nav.pricing')}
-            </button>
-            <button onClick={() => scrollToSection('partnership')} className="nav-link">
+            </a>
+            <a href="#partnership" className="nav-link">
               {t('nav.partnership')}
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="nav-link">
+            </a>
+            <a href="#contact" className="nav-link">
               {t('nav.contact')}
-            </button>
+            </a>
             <Button
               variant="ghost"
               size="sm"
@@ -55,9 +49,9 @@ export const Navigation = () => {
             </Button>
           </div>
 
-          <button className="button-nav-cta" onClick={() => scrollToSection('contact')}>
+          <a href="#contact" className="button-nav-cta">
             {t('nav.cta')}
-          </button>
+          </a>
         </div>
       </div>
     </nav>
