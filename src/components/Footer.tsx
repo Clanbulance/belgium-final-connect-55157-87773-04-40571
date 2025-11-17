@@ -1,13 +1,6 @@
 import { Building2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const scrollToSection = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-};
-
 export const Footer = () => {
   const { t } = useLanguage();
 
@@ -36,10 +29,10 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">{t('footer.services.title')}</h4>
             <ul className="footer-list">
-              <li><button onClick={() => scrollToSection('services')} className="footer-link">{t('footer.services.1')}</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="footer-link">{t('footer.services.2')}</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="footer-link">{t('footer.services.3')}</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="footer-link">{t('footer.services.4')}</button></li>
+              <li><a href="#services" className="footer-link">{t('footer.services.1')}</a></li>
+              <li><a href="#services" className="footer-link">{t('footer.services.2')}</a></li>
+              <li><a href="#services" className="footer-link">{t('footer.services.3')}</a></li>
+              <li><a href="#services" className="footer-link">{t('footer.services.4')}</a></li>
             </ul>
           </div>
 
@@ -47,10 +40,10 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">{t('footer.company.title')}</h4>
             <ul className="footer-list">
-              <li><button onClick={() => scrollToSection('partnership')} className="footer-link">{t('footer.company.1')}</button></li>
-              <li><button onClick={() => scrollToSection('pricing')} className="footer-link">{t('footer.company.2')}</button></li>
-              <li><button onClick={() => scrollToSection('contact')} className="footer-link">{t('footer.company.3')}</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="footer-link">{t('footer.company.4')}</button></li>
+              <li><a href="#partnership" className="footer-link">{t('footer.company.1')}</a></li>
+              <li><a href="#pricing" className="footer-link">{t('footer.company.2')}</a></li>
+              <li><a href="#contact" className="footer-link">{t('footer.company.3')}</a></li>
+              <li><a href="#services" className="footer-link">{t('footer.company.4')}</a></li>
             </ul>
           </div>
         </div>
