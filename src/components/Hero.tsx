@@ -34,9 +34,9 @@ export const Hero = () => {
               {t('hero.cta.primary')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
-            <button className="button-secondary-minimal" onClick={() => scrollToSection('pricing')}>
+            {/* <button className="button-secondary-minimal" onClick={() => scrollToSection('pricing')}>
               {t('hero.cta.secondary')}
-            </button>
+            </button> */}
           </div>
 
           {/* Trust Badges */}
