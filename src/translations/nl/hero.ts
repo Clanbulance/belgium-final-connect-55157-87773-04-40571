@@ -13,5 +13,5 @@ export const hero = {
   'hero.value4.desc': 'Externe hulp & slimme workflows',
   'hero.cta.primary': 'Plan Gratis Consultatie',
   'hero.cta.secondary': 'Bekijk Prijzen',
-  'hero.note': '🚀 Express landingspagina? Eerste versie in 48 uur. Vanaf €499',
+  'hero.note': 'Express landingspagina? Eerste versie in 48 uur. Vanaf €499',
 };

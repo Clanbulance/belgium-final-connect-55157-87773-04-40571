@@ -13,5 +13,5 @@ export const hero = {
   'hero.value4.desc': 'Remote help & smart workflows',
   'hero.cta.primary': 'Schedule Free Consultation',
   'hero.cta.secondary': 'View Pricing',
-  'hero.note': '🚀 Express landing page? First draft in 48 hours. Starting from €499',
+  'hero.note': 'Express landing page? First draft in 48 hours. Starting from €499',
 };
