@@ -11,7 +11,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/rjdp-mark.svg" alt="RJDP Consulting" className="logo-mark-footer" />
+              <img src="/rjdp-markWhite.svg" alt="RJDP Consulting" className="logo-mark" />
               <div>
                 <h3 className="font-bold text-lg">RJDP Consulting</h3>
                 <p className="text-sm footer-subtitle">{t('nav.subtitle')}</p>
