@@ -498,7 +498,7 @@ button {
 
 a.nav-logo,
 .nav-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.875rem;
   transition: all 0.2s;
@@ -510,6 +510,14 @@ a.nav-logo,
   border-radius: 0.5rem;
   min-width: 0;
   text-decoration: none !important;
+}
+
+.logo-mark {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  color: var(--primary);
 }
 
 .nav-logo span {
