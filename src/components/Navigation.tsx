@@ -18,7 +18,7 @@ export const Navigation = () => {
             }}
             className="nav-logo"
           >
-            <Building2 className="logo-icon" />
+            <img src="/logo.svg" alt="RJDP Consulting" className="h-10 w-auto" />
             <div>
               <h2 className="logo-title">RJDP Consulting</h2>
               <p className="logo-subtitle">{t('nav.subtitle')}</p>
