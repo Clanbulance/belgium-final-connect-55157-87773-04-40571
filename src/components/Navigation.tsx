@@ -18,7 +18,7 @@ export const Navigation = () => {
             }}
             className="nav-logo"
           >
-            <img src="/rjdp-mark.svg" alt="RJDP Consulting" className="h-10 w-auto" />
+            <img src="/rjdp-mark.svg" alt="RJDP Consulting" className="logo-mark" />
             <div>
               <h2 className="logo-title">RJDP Consulting</h2>
               <p className="logo-subtitle">{t('nav.subtitle')}</p>
